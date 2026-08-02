@@ -1,14 +1,4 @@
 
-# Crear themes.js con contenido exhaustivo A1-C1
-# Lo dividiré en partes por ser muy largo
-
-themes_part1 = '''/**
- * ============================================
- * themes.js - BASE DE DATOS DE CONTENIDO EDUCATIVO
- * ============================================
- * Contenido completo para A1, A2, B1, B2, C1
- * Secciones: Grammar, Vocabulary, Listening, Reading, Use of English, Writing
- */
 
 const SECTIONS = [
     { id: 'grammar', name: 'Grammar', icon: '⚙️', desc: 'Gramática completa desde A1 hasta C1. Explicaciones claras con ejercicios interactivos.' },
@@ -76,15 +66,10 @@ const LESSON_TITLES = {
         C1: ['Academic Writing', 'Proposals', 'Critical Reviews']
     }
 };
-'''
-
-with open(f"{output_dir}/themes.js", "w", encoding="utf-8") as f:
-    f.write(themes_part1)
-
-print("✅ themes.js parte 1 creada")
 
 
-themes_part2 = '''
+
+//themes_part2 
 // ============================================
 // FUNCIONES DE ACCESO
 // ============================================
@@ -186,8 +171,20 @@ const GRAMMAR_LESSONS = {
                 },
                 {
                     label: 'Preguntas y Respuestas',
-                    examples: ['Are you ready? Yes, I am.', 'Is he your brother? No, he isn\\'t.', 'Where are you from? I am from Mexico.', 'How old is she? She is 30.', 'What is your name? My name is Ana.'],
-                    translations: ['¿Estás listo? Sí, lo estoy.', '¿Él es tu hermano? No, no lo es.', '¿De dónde eres? Soy de México.', '¿Cuántos años tiene? Tiene 30.', '¿Cómo te llamas? Me llamo Ana.']
+                    examples: [
+                        'Are you ready? Yes, I am.',
+                        'Is he your brother? No, he isn\'t.',
+                        'Where are you from? I am from Mexico.',
+                        'How old is she? She is 30.',
+                        'What is your name? My name is Ana.'
+                    ],
+                    translations: [
+                        '¿Estás listo? Sí, lo estoy.',
+                        '¿Él es tu hermano? No, no lo es.',
+                        '¿De dónde eres? Soy de México.',
+                        '¿Cuántos años tiene? Tiene 30.',
+                        '¿Cómo te llamas? Me llamo Ana.'
+                    ]
                 }
             ],
             exercises: [
@@ -515,18 +512,10 @@ const GRAMMAR_LESSONS = {
             ]
         }
     ],
-'''
-
-with open(f"{output_dir}/themes.js", "a", encoding="utf-8") as f:
-    f.write(themes_part2)
-
-print("✅ themes.js parte 2 (Grammar A1) creada")
 
 
 
-output_dir = "/mnt/agents/output/english-learning-hub"
-
-themes_part3 = '''
+    //themes_part3 
     A2: [
         {
             title: 'Past Simple',
@@ -907,18 +896,8 @@ themes_part3 = '''
             ]
         }
     ],
-'''
 
-with open(f"{output_dir}/themes.js", "a", encoding="utf-8") as f:
-    f.write(themes_part3)
-
-print("✅ themes.js parte 3 (Grammar A2 completo) creada")
-
-
-
-output_dir = "/mnt/agents/output/english-learning-hub"
-
-themes_part4 = '''
+    //themes_part4
     B1: [
         {
             title: 'Present Perfect',
@@ -1083,7 +1062,7 @@ themes_part4 = '''
                     label: 'Decisiones Espontáneas y Ofertas',
                     examples: ['I\'ll get it! (the phone)', 'I think I\'ll have the salad.', 'Will you help me with this?', 'Don\'t worry, I\'ll drive you home.'],
                     translations: ['¡Yo contesto! (el teléfono)', 'Creo que voy a pedir la ensalada.', '¿Me ayudas con esto?', 'No te preocupes, te llevo a casa.'
-]
+                    ]
                 },
                 {
                     label: 'Predicciones y Promesas',
@@ -1251,17 +1230,8 @@ themes_part4 = '''
             ]
         }
     ],
-'''
 
-with open(f"{output_dir}/themes.js", "a", encoding="utf-8") as f:
-    f.write(themes_part4)
-
-print("✅ themes.js parte 4 (Grammar B1) creada")
-
-
-output_dir = "/mnt/agents/output/english-learning-hub"
-
-themes_part5 = '''
+    //themes_part5
     B2: [
         {
             title: 'Present Perfect Continuous',
@@ -1543,17 +1513,8 @@ themes_part5 = '''
             ]
         }
     ],
-'''
 
-with open(f"{output_dir}/themes.js", "a", encoding="utf-8") as f:
-    f.write(themes_part5)
-
-print("✅ themes.js parte 5 (Grammar B2) creada")
-
-
-output_dir = "/mnt/agents/output/english-learning-hub"
-
-themes_part6 = '''
+    //themes_part6
     C1: [
         {
             title: 'Third Conditional',
@@ -1835,12 +1796,7 @@ themes_part6 = '''
         }
     ]
 };
-'''
 
-with open(f"{output_dir}/themes.js", "a", encoding="utf-8") as f:
-    f.write(themes_part6)
-
-print("✅ themes.js parte 6 (Grammar C1 completo) creada")
 
 
 
@@ -1850,137 +1806,137 @@ print("✅ themes.js parte 6 (Grammar C1 completo) creada")
    ============================================================ */
 
 const courseData = {
-  /* ═══════════════════════════════════════════════════════════ */
-  /* NIVEL A1 - PRINCIPIANTE                                    */
-  /* ═══════════════════════════════════════════════════════════ */
-  A1: {
-    Grammar: [
-      {
-        title: "Verbo To Be (Ser/Estar)",
-        explanation: `<p>El verbo <strong>to be</strong> es el más importante en inglés. Tiene tres formas en presente:</p>
+    /* ═══════════════════════════════════════════════════════════ */
+    /* NIVEL A1 - PRINCIPIANTE                                    */
+    /* ═══════════════════════════════════════════════════════════ */
+    A1: {
+        Grammar: [
+            {
+                title: "Verbo To Be (Ser/Estar)",
+                explanation: `<p>El verbo <strong>to be</strong> es el más importante en inglés. Tiene tres formas en presente:</p>
           <ul><li><strong>I am</strong> (Yo soy/estoy)</li><li><strong>You/We/They are</strong> (Tú/nosotros/ellos sois/estáis)</li><li><strong>He/She/It is</strong> (Él/ella/eso es/está)</li></ul>
           <p>Se usa para describir personas, lugares, sentimientos y profesiones.</p>`,
-        examples: ["I am a student. (Soy estudiante)", "She is happy. (Ella está feliz)", "They are from Spain. (Ellos son de España)"],
-        exercises: [
-          { question: "Complete: She ___ a doctor.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'she' usamos 'is'." },
-          { question: "Complete: We ___ friends.", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'we' usamos 'are'." },
-          { question: "Complete: I ___ tired.", options: ["am", "is", "are", "be"], correct: "am", explanation: "Con 'I' usamos 'am'." },
-          { question: "Complete: It ___ a cat.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'it' usamos 'is'." },
-          { question: "Complete: You ___ late.", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'you' usamos 'are'." }
-        ],
-        exam: [
-          { question: "My brother ___ 20 years old.", options: ["am", "is", "are", "be"], correct: "is", explanation: "'Brother' = he → is" },
-          { question: "The books ___ on the table.", options: ["am", "is", "are", "be"], correct: "are", explanation: "'Books' = they → are" },
-          { question: "___ she your sister?", options: ["Am", "Is", "Are", "Be"], correct: "Is", explanation: "Con 'she' usamos 'Is' al inicio." },
-          { question: "I ___ not hungry.", options: ["am", "is", "are", "be"], correct: "am", explanation: "Negación con 'I am not'." },
-          { question: "Where ___ they from?", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'they' usamos 'are'." }
-        ]
-      },
-      {
-        title: "Artículos A / An",
-        explanation: `<p>Usamos <strong>a</strong> antes de palabras que empiezan con sonido consonante, y <strong>an</strong> antes de sonido vocal.</p>
+                examples: ["I am a student. (Soy estudiante)", "She is happy. (Ella está feliz)", "They are from Spain. (Ellos son de España)"],
+                exercises: [
+                    { question: "Complete: She ___ a doctor.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'she' usamos 'is'." },
+                    { question: "Complete: We ___ friends.", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'we' usamos 'are'." },
+                    { question: "Complete: I ___ tired.", options: ["am", "is", "are", "be"], correct: "am", explanation: "Con 'I' usamos 'am'." },
+                    { question: "Complete: It ___ a cat.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'it' usamos 'is'." },
+                    { question: "Complete: You ___ late.", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'you' usamos 'are'." }
+                ],
+                exam: [
+                    { question: "My brother ___ 20 years old.", options: ["am", "is", "are", "be"], correct: "is", explanation: "'Brother' = he → is" },
+                    { question: "The books ___ on the table.", options: ["am", "is", "are", "be"], correct: "are", explanation: "'Books' = they → are" },
+                    { question: "___ she your sister?", options: ["Am", "Is", "Are", "Be"], correct: "Is", explanation: "Con 'she' usamos 'Is' al inicio." },
+                    { question: "I ___ not hungry.", options: ["am", "is", "are", "be"], correct: "am", explanation: "Negación con 'I am not'." },
+                    { question: "Where ___ they from?", options: ["am", "is", "are", "be"], correct: "are", explanation: "Con 'they' usamos 'are'." }
+                ]
+            },
+            {
+                title: "Artículos A / An",
+                explanation: `<p>Usamos <strong>a</strong> antes de palabras que empiezan con sonido consonante, y <strong>an</strong> antes de sonido vocal.</p>
           <p>Ejemplos: <em>a book</em>, <em>an apple</em>, <em>a university</em> (suena 'iu'), <em>an hour</em> (la 'h' no suena).</p>`,
-        examples: ["I have a dog. (Tengo un perro)", "She eats an orange. (Ella come una naranja)", "He is a teacher. (Él es profesor)"],
-        exercises: [
-          { question: "Choose: ___ elephant", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Elephant' empieza con vocal → an" },
-          { question: "Choose: ___ book", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Book' empieza con consonante → a" },
-          { question: "Choose: ___ honest man", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Honest' suena con 'o' (la h no se pronuncia) → an" },
-          { question: "Choose: ___ university", options: ["a", "an", "the", "-"], correct: "a", explanation: "'University' suena 'iu' (consonante) → a" },
-          { question: "Choose: ___ apple", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Apple' empieza con vocal → an" }
-        ],
-        exam: [
-          { question: "I need ___ umbrella.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Umbrella' empieza con vocal → an" },
-          { question: "She is ___ doctor.", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Doctor' empieza con consonante → a" },
-          { question: "He has ___ idea.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Idea' empieza con vocal → an" },
-          { question: "My father drives ___ car.", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Car' empieza con consonante → a" },
-          { question: "It is ___ interesting book.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Interesting' empieza con vocal → an" }
-        ]
-      },
-      {
-        title: "Plurales Sencillos",
-        explanation: `<p>Para formar el plural en inglés, generalmente añadimos <strong>-s</strong> o <strong>-es</strong>.</p>
+                examples: ["I have a dog. (Tengo un perro)", "She eats an orange. (Ella come una naranja)", "He is a teacher. (Él es profesor)"],
+                exercises: [
+                    { question: "Choose: ___ elephant", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Elephant' empieza con vocal → an" },
+                    { question: "Choose: ___ book", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Book' empieza con consonante → a" },
+                    { question: "Choose: ___ honest man", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Honest' suena con 'o' (la h no se pronuncia) → an" },
+                    { question: "Choose: ___ university", options: ["a", "an", "the", "-"], correct: "a", explanation: "'University' suena 'iu' (consonante) → a" },
+                    { question: "Choose: ___ apple", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Apple' empieza con vocal → an" }
+                ],
+                exam: [
+                    { question: "I need ___ umbrella.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Umbrella' empieza con vocal → an" },
+                    { question: "She is ___ doctor.", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Doctor' empieza con consonante → a" },
+                    { question: "He has ___ idea.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Idea' empieza con vocal → an" },
+                    { question: "My father drives ___ car.", options: ["a", "an", "the", "-"], correct: "a", explanation: "'Car' empieza con consonante → a" },
+                    { question: "It is ___ interesting book.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Interesting' empieza con vocal → an" }
+                ]
+            },
+            {
+                title: "Plurales Sencillos",
+                explanation: `<p>Para formar el plural en inglés, generalmente añadimos <strong>-s</strong> o <strong>-es</strong>.</p>
           <ul><li>La mayoría: +s (cat → cats)</li><li>Terminados en s, x, ch, sh, o: +es (box → boxes, watch → watches)</li><li>Terminados en consonante + y: -y +ies (baby → babies)</li></ul>`,
-        examples: ["One dog, two dogs", "One box, two boxes", "One baby, two babies"],
-        exercises: [
-          { question: "Plural de 'book'", options: ["books", "bookes", "bookies", "booke"], correct: "books", explanation: "Generalmente solo añadimos -s" },
-          { question: "Plural de 'watch'", options: ["watchs", "watches", "watchies", "watche"], correct: "watches", explanation: "Termina en ch → añadimos -es" },
-          { question: "Plural de 'city'", options: ["citys", "cityes", "cities", "citie"], correct: "cities", explanation: "Consonante + y → -y + ies" },
-          { question: "Plural de 'box'", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → añadimos -es" },
-          { question: "Plural de 'bus'", options: ["buss", "buses", "busies", "buse"], correct: "buses", explanation: "Termina en s → añadimos -es" }
+                examples: ["One dog, two dogs", "One box, two boxes", "One baby, two babies"],
+                exercises: [
+                    { question: "Plural de 'book'", options: ["books", "bookes", "bookies", "booke"], correct: "books", explanation: "Generalmente solo añadimos -s" },
+                    { question: "Plural de 'watch'", options: ["watchs", "watches", "watchies", "watche"], correct: "watches", explanation: "Termina en ch → añadimos -es" },
+                    { question: "Plural de 'city'", options: ["citys", "cityes", "cities", "citie"], correct: "cities", explanation: "Consonante + y → -y + ies" },
+                    { question: "Plural de 'box'", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → añadimos -es" },
+                    { question: "Plural de 'bus'", options: ["buss", "buses", "busies", "buse"], correct: "buses", explanation: "Termina en s → añadimos -es" }
+                ],
+                exam: [
+                    { question: "Two ___ (baby) are sleeping.", options: ["babys", "babies", "babyes", "babie"], correct: "babies", explanation: "Consonante + y → ies" },
+                    { question: "I have three ___ (box).", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → es" },
+                    { question: "The ___ (dish) are dirty.", options: ["dishs", "dishes", "dishies", "dishe"], correct: "dishes", explanation: "Termina en sh → es" },
+                    { question: "Many ___ (student) study here.", options: ["students", "studentes", "studies", "studente"], correct: "students", explanation: "Solo añadimos -s" },
+                    { question: "Two ___ (tomato) please.", options: ["tomatos", "tomatoes", "tomatoies", "tomatoe"], correct: "tomatoes", explanation: "Termina en o → es" }
+                ]
+            }
         ],
-        exam: [
-          { question: "Two ___ (baby) are sleeping.", options: ["babys", "babies", "babyes", "babie"], correct: "babies", explanation: "Consonante + y → ies" },
-          { question: "I have three ___ (box).", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → es" },
-          { question: "The ___ (dish) are dirty.", options: ["dishs", "dishes", "dishies", "dishe"], correct: "dishes", explanation: "Termina en sh → es" },
-          { question: "Many ___ (student) study here.", options: ["students", "studentes", "studies", "studente"], correct: "students", explanation: "Solo añadimos -s" },
-          { question: "Two ___ (tomato) please.", options: ["tomatos", "tomatoes", "tomatoies", "tomatoe"], correct: "tomatoes", explanation: "Termina en o → es" }
-        ]
-      }
-    ],
-    
-    Vocabulary: [
-      {
-        title: "Saludos y Presentaciones",
-        explanation: `<p>Aprende las frases básicas para presentarte y saludar en inglés.</p>`,
-        examples: ["Hello! My name is John.", "Nice to meet you!", "How are you? I'm fine, thanks."],
-        vocabList: [
-          { word: "Hello", type: "interj", meaning: "Hola", example: "Hello, how are you?" },
-          { word: "Good morning", type: "frase", meaning: "Buenos días", example: "Good morning, teacher!" },
-          { word: "Goodbye", type: "interj", meaning: "Adiós", example: "Goodbye, see you tomorrow!" },
-          { word: "Please", type: "adv", meaning: "Por favor", example: "A coffee, please." },
-          { word: "Thank you", type: "frase", meaning: "Gracias", example: "Thank you very much!" },
-          { word: "Sorry", type: "interj", meaning: "Lo siento / Perdón", example: "Sorry, I don't understand." },
-          { word: "Name", type: "n", meaning: "Nombre", example: "What is your name?" },
-          { word: "Friend", type: "n", meaning: "Amigo/a", example: "She is my friend." }
+
+        Vocabulary: [
+            {
+                title: "Saludos y Presentaciones",
+                explanation: `<p>Aprende las frases básicas para presentarte y saludar en inglés.</p>`,
+                examples: ["Hello! My name is John.", "Nice to meet you!", "How are you? I'm fine, thanks."],
+                vocabList: [
+                    { word: "Hello", type: "interj", meaning: "Hola", example: "Hello, how are you?" },
+                    { word: "Good morning", type: "frase", meaning: "Buenos días", example: "Good morning, teacher!" },
+                    { word: "Goodbye", type: "interj", meaning: "Adiós", example: "Goodbye, see you tomorrow!" },
+                    { word: "Please", type: "adv", meaning: "Por favor", example: "A coffee, please." },
+                    { word: "Thank you", type: "frase", meaning: "Gracias", example: "Thank you very much!" },
+                    { word: "Sorry", type: "interj", meaning: "Lo siento / Perdón", example: "Sorry, I don't understand." },
+                    { word: "Name", type: "n", meaning: "Nombre", example: "What is your name?" },
+                    { word: "Friend", type: "n", meaning: "Amigo/a", example: "She is my friend." }
+                ],
+                exercises: [
+                    { question: "¿Cómo se dice 'Buenos días'?", options: ["Good night", "Good morning", "Good afternoon", "Hello"], correct: "Good morning", explanation: "'Good morning' = Buenos días" },
+                    { question: "¿Cómo se dice 'Gracias'?", options: ["Please", "Sorry", "Thank you", "Hello"], correct: "Thank you", explanation: "'Thank you' = Gracias" },
+                    { question: "¿Cómo se dice 'Por favor'?", options: ["Sorry", "Please", "Thanks", "Hello"], correct: "Please", explanation: "'Please' = Por favor" },
+                    { question: "Complete: ___ to meet you.", options: ["Good", "Nice", "Happy", "Fine"], correct: "Nice", explanation: "'Nice to meet you' = Encantado de conocerte" },
+                    { question: "¿Cómo se dice 'Adiós'?", options: ["Hello", "Hi", "Goodbye", "Please"], correct: "Goodbye", explanation: "'Goodbye' = Adiós" }
+                ],
+                exam: [
+                    { question: "___ you! (¡Gracias!)", options: ["Please", "Sorry", "Thank", "Hello"], correct: "Thank", explanation: "'Thank you' = Gracias" },
+                    { question: "What is your ___?", options: ["age", "name", "job", "city"], correct: "name", explanation: "'What is your name?' = ¿Cómo te llamas?" },
+                    { question: "___ morning! (¡Buenos días!)", options: ["Good", "Nice", "Hello", "Fine"], correct: "Good", explanation: "'Good morning' = Buenos días" },
+                    { question: "She is my ___.", options: ["name", "job", "friend", "house"], correct: "friend", explanation: "'Friend' = amigo/a" },
+                    { question: "A coffee, ___.", options: ["sorry", "thanks", "please", "hello"], correct: "please", explanation: "'Please' = por favor" }
+                ]
+            },
+            {
+                title: "Números y el Alfabeto",
+                explanation: `<p>Los números del 1 al 20 y el alfabeto son fundamentales.</p>`,
+                vocabList: [
+                    { word: "One", type: "num", meaning: "Uno", example: "I have one brother." },
+                    { word: "Ten", type: "num", meaning: "Diez", example: "She is ten years old." },
+                    { word: "Twenty", type: "num", meaning: "Veinte", example: "I have twenty euros." },
+                    { word: "First", type: "adj", meaning: "Primero", example: "January is the first month." },
+                    { word: "Letter", type: "n", meaning: "Letra", example: "A is the first letter." },
+                    { word: "Number", type: "n", meaning: "Número", example: "What is your phone number?" }
+                ],
+                exercises: [
+                    { question: "¿Cómo se dice '15'?", options: ["Fiveteen", "Fifteen", "Fifty", "Five"], correct: "Fifteen", explanation: "15 = Fifteen" },
+                    { question: "¿Cómo se dice '20'?", options: ["Twelve", "Twenty", "Two", "Twice"], correct: "Twenty", explanation: "20 = Twenty" },
+                    { question: "¿Cómo se dice '3'?", options: ["Tree", "Three", "Thirteen", "Thirty"], correct: "Three", explanation: "3 = Three" },
+                    { question: "¿Cómo se dice '12'?", options: ["Two", "Twenty", "Twelve", "Tenth"], correct: "Twelve", explanation: "12 = Twelve" },
+                    { question: "¿Cómo se escribe 'B' en inglés?", options: ["Be", "Bee", "Bi", "Bay"], correct: "Bee", explanation: "La letra B se pronuncia /biː/" }
+                ],
+                exam: [
+                    { question: "10 + 5 = ___", options: ["Fourteen", "Fifteen", "Fiveteen", "Fifty"], correct: "Fifteen", explanation: "10+5=15 → Fifteen" },
+                    { question: "The ___ month is January.", options: ["one", "first", "once", "oneth"], correct: "first", explanation: "'First' = primero (ordinal)" },
+                    { question: "I have ___ sisters. (2)", options: ["one", "two", "too", "to"], correct: "two", explanation: "2 = Two" },
+                    { question: "She is ___ years old. (16)", options: ["sixty", "sixteen", "sixth", "six"], correct: "sixteen", explanation: "16 = Sixteen" },
+                    { question: "What is your phone ___?", options: ["letter", "number", "name", "age"], correct: "number", explanation: "'Phone number' = número de teléfono" }
+                ]
+            }
         ],
-        exercises: [
-          { question: "¿Cómo se dice 'Buenos días'?", options: ["Good night", "Good morning", "Good afternoon", "Hello"], correct: "Good morning", explanation: "'Good morning' = Buenos días" },
-          { question: "¿Cómo se dice 'Gracias'?", options: ["Please", "Sorry", "Thank you", "Hello"], correct: "Thank you", explanation: "'Thank you' = Gracias" },
-          { question: "¿Cómo se dice 'Por favor'?", options: ["Sorry", "Please", "Thanks", "Hello"], correct: "Please", explanation: "'Please' = Por favor" },
-          { question: "Complete: ___ to meet you.", options: ["Good", "Nice", "Happy", "Fine"], correct: "Nice", explanation: "'Nice to meet you' = Encantado de conocerte" },
-          { question: "¿Cómo se dice 'Adiós'?", options: ["Hello", "Hi", "Goodbye", "Please"], correct: "Goodbye", explanation: "'Goodbye' = Adiós" }
-        ],
-        exam: [
-          { question: "___ you! (¡Gracias!)", options: ["Please", "Sorry", "Thank", "Hello"], correct: "Thank", explanation: "'Thank you' = Gracias" },
-          { question: "What is your ___?", options: ["age", "name", "job", "city"], correct: "name", explanation: "'What is your name?' = ¿Cómo te llamas?" },
-          { question: "___ morning! (¡Buenos días!)", options: ["Good", "Nice", "Hello", "Fine"], correct: "Good", explanation: "'Good morning' = Buenos días" },
-          { question: "She is my ___.", options: ["name", "job", "friend", "house"], correct: "friend", explanation: "'Friend' = amigo/a" },
-          { question: "A coffee, ___.", options: ["sorry", "thanks", "please", "hello"], correct: "please", explanation: "'Please' = por favor" }
-        ]
-      },
-      {
-        title: "Números y el Alfabeto",
-        explanation: `<p>Los números del 1 al 20 y el alfabeto son fundamentales.</p>`,
-        vocabList: [
-          { word: "One", type: "num", meaning: "Uno", example: "I have one brother." },
-          { word: "Ten", type: "num", meaning: "Diez", example: "She is ten years old." },
-          { word: "Twenty", type: "num", meaning: "Veinte", example: "I have twenty euros." },
-          { word: "First", type: "adj", meaning: "Primero", example: "January is the first month." },
-          { word: "Letter", type: "n", meaning: "Letra", example: "A is the first letter." },
-          { word: "Number", type: "n", meaning: "Número", example: "What is your phone number?" }
-        ],
-        exercises: [
-          { question: "¿Cómo se dice '15'?", options: ["Fiveteen", "Fifteen", "Fifty", "Five"], correct: "Fifteen", explanation: "15 = Fifteen" },
-          { question: "¿Cómo se dice '20'?", options: ["Twelve", "Twenty", "Two", "Twice"], correct: "Twenty", explanation: "20 = Twenty" },
-          { question: "¿Cómo se dice '3'?", options: ["Tree", "Three", "Thirteen", "Thirty"], correct: "Three", explanation: "3 = Three" },
-          { question: "¿Cómo se dice '12'?", options: ["Two", "Twenty", "Twelve", "Tenth"], correct: "Twelve", explanation: "12 = Twelve" },
-          { question: "¿Cómo se escribe 'B' en inglés?", options: ["Be", "Bee", "Bi", "Bay"], correct: "Bee", explanation: "La letra B se pronuncia /biː/" }
-        ],
-        exam: [
-          { question: "10 + 5 = ___", options: ["Fourteen", "Fifteen", "Fiveteen", "Fifty"], correct: "Fifteen", explanation: "10+5=15 → Fifteen" },
-          { question: "The ___ month is January.", options: ["one", "first", "once", "oneth"], correct: "first", explanation: "'First' = primero (ordinal)" },
-          { question: "I have ___ sisters. (2)", options: ["one", "two", "too", "to"], correct: "two", explanation: "2 = Two" },
-          { question: "She is ___ years old. (16)", options: ["sixty", "sixteen", "sixth", "six"], correct: "sixteen", explanation: "16 = Sixteen" },
-          { question: "What is your phone ___?", options: ["letter", "number", "name", "age"], correct: "number", explanation: "'Phone number' = número de teléfono" }
-        ]
-      }
-    ],
-    
-    Listening: [
-      {
-        title: "Compras Básicas",
-        explanation: `<p>Escucha y practica situaciones de compra. Lee el diálogo y responde las preguntas.</p>`,
-        listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
+
+        Listening: [
+            {
+                title: "Compras Básicas",
+                explanation: `<p>Escucha y practica situaciones de compra. Lee el diálogo y responde las preguntas.</p>`,
+                listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
           <strong>Shop Assistant:</strong> Good morning! Can I help you?<br>
           <strong>Customer:</strong> Yes, please. How much is this shirt?<br>
           <strong>Shop Assistant:</strong> It's twenty-five pounds.<br>
@@ -1991,20 +1947,20 @@ const courseData = {
           <strong>Customer:</strong> Thank you. Goodbye!<br>
           <strong>Shop Assistant:</strong> Goodbye!
         </div>`,
-        exercises: [
-          { question: "¿Cuánto cuesta la camisa?", options: ["15 pounds", "25 pounds", "40 pounds", "50 pounds"], correct: "25 pounds", explanation: "El diálogo dice: 'It's twenty-five pounds.'" },
-          { question: "¿Qué compra el cliente?", options: ["Shoes", "Shirt", "Hat", "Nothing"], correct: "Shirt", explanation: "Dice: 'I'll take the shirt, please.'" },
-          { question: "¿Cuánto cuestan los zapatos?", options: ["20 pounds", "25 pounds", "40 pounds", "45 pounds"], correct: "40 pounds", explanation: "Dice: 'The shoes are forty pounds.'" }
-        ],
-        exam: [
-          { question: "What does the customer buy?", options: ["Shoes", "A shirt", "A hat", "Nothing"], correct: "A shirt", explanation: "El cliente compra la camisa (shirt)." },
-          { question: "How much are the shoes?", options: ["£20", "£25", "£40", "£50"], correct: "£40", explanation: "Los zapatos cuestan 40 libras." },
-          { question: "The shirt costs ___ pounds.", options: ["fifteen", "twenty", "twenty-five", "forty"], correct: "twenty-five", explanation: "La camisa cuesta 25 libras." }
-        ]
-      },
-      {
-        title: "En el Restaurante",
-        listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
+                exercises: [
+                    { question: "¿Cuánto cuesta la camisa?", options: ["15 pounds", "25 pounds", "40 pounds", "50 pounds"], correct: "25 pounds", explanation: "El diálogo dice: 'It's twenty-five pounds.'" },
+                    { question: "¿Qué compra el cliente?", options: ["Shoes", "Shirt", "Hat", "Nothing"], correct: "Shirt", explanation: "Dice: 'I'll take the shirt, please.'" },
+                    { question: "¿Cuánto cuestan los zapatos?", options: ["20 pounds", "25 pounds", "40 pounds", "45 pounds"], correct: "40 pounds", explanation: "Dice: 'The shoes are forty pounds.'" }
+                ],
+                exam: [
+                    { question: "What does the customer buy?", options: ["Shoes", "A shirt", "A hat", "Nothing"], correct: "A shirt", explanation: "El cliente compra la camisa (shirt)." },
+                    { question: "How much are the shoes?", options: ["£20", "£25", "£40", "£50"], correct: "£40", explanation: "Los zapatos cuestan 40 libras." },
+                    { question: "The shirt costs ___ pounds.", options: ["fifteen", "twenty", "twenty-five", "forty"], correct: "twenty-five", explanation: "La camisa cuesta 25 libras." }
+                ]
+            },
+            {
+                title: "En el Restaurante",
+                listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
           <strong>Waiter:</strong> Good evening. A table for two?<br>
           <strong>Man:</strong> Yes, please.<br>
           <strong>Waiter:</strong> Here is the menu. What would you like to drink?<br>
@@ -2015,236 +1971,236 @@ const courseData = {
           <strong>Man:</strong> And I'll have the burger with fries.<br>
           <strong>Waiter:</strong> Great choice!
         </div>`,
-        exercises: [
-          { question: "¿Qué bebe la mujer?", options: ["Coke", "Water", "Juice", "Coffee"], correct: "Water", explanation: "Ella pide 'a glass of water'" },
-          { question: "¿Qué pide el hombre de comer?", options: ["Chicken salad", "Burger with fries", "Pizza", "Soup"], correct: "Burger with fries", explanation: "Él pide 'the burger with fries'" },
-          { question: "¿Para cuántas personas es la mesa?", options: ["One", "Two", "Three", "Four"], correct: "Two", explanation: "Dice 'A table for two?'" }
+                exercises: [
+                    { question: "¿Qué bebe la mujer?", options: ["Coke", "Water", "Juice", "Coffee"], correct: "Water", explanation: "Ella pide 'a glass of water'" },
+                    { question: "¿Qué pide el hombre de comer?", options: ["Chicken salad", "Burger with fries", "Pizza", "Soup"], correct: "Burger with fries", explanation: "Él pide 'the burger with fries'" },
+                    { question: "¿Para cuántas personas es la mesa?", options: ["One", "Two", "Three", "Four"], correct: "Two", explanation: "Dice 'A table for two?'" }
+                ],
+                exam: [
+                    { question: "The woman drinks ___.", options: ["Coke", "water", "juice", "wine"], correct: "water", explanation: "Ella bebe agua." },
+                    { question: "The man orders a ___ with fries.", options: ["salad", "burger", "pizza", "soup"], correct: "burger", explanation: "Él pide una hamburguesa con papas fritas." },
+                    { question: "They are a table for ___.", options: ["one", "two", "three", "four"], correct: "two", explanation: "Mesa para dos personas." }
+                ]
+            }
         ],
-        exam: [
-          { question: "The woman drinks ___.", options: ["Coke", "water", "juice", "wine"], correct: "water", explanation: "Ella bebe agua." },
-          { question: "The man orders a ___ with fries.", options: ["salad", "burger", "pizza", "soup"], correct: "burger", explanation: "Él pide una hamburguesa con papas fritas." },
-          { question: "They are a table for ___.", options: ["one", "two", "three", "four"], correct: "two", explanation: "Mesa para dos personas." }
-        ]
-      }
-    ],
-    
-    Reading: [
-      {
-        title: "Mi Familia",
-        readingText: `<p>Hello! My name is María. I am 25 years old. I live in Madrid with my family. My mother is a teacher and my father is a doctor. I have one brother. His name is Carlos. He is 20 years old and he is a student. We have a small dog. His name is Max. I love my family very much.</p>`,
-        exercises: [
-          { question: "¿Cuántos años tiene María?", options: ["20", "22", "25", "30"], correct: "25", explanation: "El texto dice 'I am 25 years old.'" },
-          { question: "¿Dónde vive María?", options: ["Barcelona", "Madrid", "Lisbon", "Paris"], correct: "Madrid", explanation: "Dice 'I live in Madrid'" },
-          { question: "¿Qué es el padre de María?", options: ["Teacher", "Doctor", "Student", "Engineer"], correct: "Doctor", explanation: "Dice 'my father is a doctor'" },
-          { question: "¿Cómo se llama el hermano?", options: ["Max", "Carlos", "Juan", "Luis"], correct: "Carlos", explanation: "Dice 'His name is Carlos'" }
-        ],
-        exam: [
-          { question: "María is ___ years old.", options: ["20", "22", "25", "30"], correct: "25", explanation: "María tiene 25 años." },
-          { question: "María's mother is a ___.", options: ["doctor", "teacher", "student", "nurse"], correct: "teacher", explanation: "Su madre es profesora." },
-          { question: "Carlos is Maria's ___.", options: ["father", "brother", "friend", "cousin"], correct: "brother", explanation: "Carlos es su hermano." },
-          { question: "The dog's name is ___.", options: ["Carlos", "María", "Max", "Madrid"], correct: "Max", explanation: "El perro se llama Max." }
-        ]
-      },
-      {
-        title: "Mi Rutina Diaria",
-        readingText: `<p>I wake up at 7:00 every morning. I have breakfast at 7:30. I usually eat toast and drink coffee. Then I go to work at 8:30. I work in an office. I have lunch at 1:00. In the afternoon, I finish work at 5:00. I go home and I cook dinner. After dinner, I watch TV or read a book. I go to bed at 11:00.</p>`,
-        exercises: [
-          { question: "¿A qué hora se despierta?", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "Dice 'I wake up at 7:00'" },
-          { question: "¿Qué desayuna?", options: ["Fruit", "Toast and coffee", "Cereal", "Nothing"], correct: "Toast and coffee", explanation: "Dice 'I usually eat toast and drink coffee'" },
-          { question: "¿A qué hora termina de trabajar?", options: ["3:00", "4:00", "5:00", "6:00"], correct: "5:00", explanation: "Dice 'I finish work at 5:00'" }
-        ],
-        exam: [
-          { question: "He wakes up at ___.", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "Se despierta a las 7." },
-          { question: "He works in ___.", options: ["a hospital", "an office", "a school", "a shop"], correct: "an office", explanation: "Trabaja en una oficina." },
-          { question: "He has lunch at ___.", options: ["12:00", "1:00", "2:00", "3:00"], correct: "1:00", explanation: "Almuerza a la 1:00." },
-          { question: "After dinner, he ___ TV.", options: ["watches", "cooks", "reads", "plays"], correct: "watches", explanation: "Ve televisión después de cenar." }
-        ]
-      }
-    ],
-    
-    Writing: [
-      {
-        title: "Descríbete a ti mismo",
-        writingPrompt: "Escribe un párrafo de al menos 50 palabras sobre ti. Incluye: tu nombre, edad, dónde vives, tu familia y qué te gusta hacer.",
-        wordCount: 50,
-        exercises: [
-          { question: "¿Qué información DEBES incluir?", options: ["Solo tu nombre", "Nombre, edad, ciudad, familia y hobbies", "Solo tu edad", "Solo tu ciudad"], correct: "Nombre, edad, ciudad, familia y hobbies", explanation: "El prompt pide toda esa información." }
-        ],
-        exam: [
-          { question: "¿Cuál es el mínimo de palabras?", options: ["10", "25", "50", "100"], correct: "50", explanation: "El ejercicio pide al menos 50 palabras." }
-        ]
-      },
-      {
-        title: "Una Carta a un Amigo",
-        writingPrompt: "Escribe una carta corta a un amigo inglés. Cuéntale sobre tu último fin de semana. ¿Qué hiciste? ¿Dónde fuiste? ¿Con quién estuviste?",
-        wordCount: 60,
-        exercises: [
-          { question: "¿A quién escribes?", options: ["A un profesor", "A un amigo", "A tu jefe", "A un desconocido"], correct: "A un amigo", explanation: "El prompt dice 'a un amigo inglés'" }
-        ],
-        exam: [
-          { question: "¿De qué hablas en la carta?", options: ["Tu trabajo", "Tu último fin de semana", "Tu familia", "Tu casa"], correct: "Tu último fin de semana", explanation: "Debes contar sobre tu último fin de semana." }
-        ]
-      },
-      {
-        title: "Mi Ciudad Favorita",
-        writingPrompt: "Describe tu ciudad o pueblo favorito. Menciona: el nombre, cómo es, qué lugares hay, y por qué te gusta.",
-        wordCount: 50,
-        exercises: [
-          { question: "¿Qué debes describir?", options: ["Tu casa", "Tu ciudad favorita", "Tu escuela", "Tu trabajo"], correct: "Tu ciudad favorita", explanation: "El prompt pide describir tu ciudad favorita." }
-        ],
-        exam: [
-          { question: "¿Qué NO necesitas mencionar?", options: ["El nombre", "Cómo es", "Tu comida favorita", "Por qué te gusta"], correct: "Tu comida favorita", explanation: "No se pide mencionar comida." }
-        ]
-      }
-    ],
-    
-    Exam: [
-      {
-        title: "Examen Final A1",
-        explanation: `<p>Este examen evalúa todo lo aprendido en el nivel A1. Necesitas el 60% para aprobar.</p>`,
-        exam: [
-          { question: "She ___ my sister.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'she' usamos 'is'" },
-          { question: "I have ___ apple.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Apple' empieza con vocal → an" },
-          { question: "Two ___ (child) are playing.", options: ["childs", "children", "childes", "child"], correct: "children", explanation: "'Child' es irregular → children" },
-          { question: "Good ___! (por la mañana)", options: ["night", "morning", "evening", "bye"], correct: "morning", explanation: "'Good morning' = Buenos días" },
-          { question: "I am ___ years old. (25)", options: ["twenty", "twenty-five", "twenty-fifth", "fifty"], correct: "twenty-five", explanation: "25 = twenty-five" },
-          { question: "The plural of 'box' is ___.", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → es" },
-          { question: "___ to meet you!", options: ["Good", "Nice", "Happy", "Fine"], correct: "Nice", explanation: "'Nice to meet you' = Encantado" },
-          { question: "A table for ___?", options: ["one", "two", "three", "four"], correct: "two", explanation: "En el diálogo del restaurante: 'A table for two?'" },
-          { question: "She drinks ___.", options: ["a burger", "water", "a salad", "fries"], correct: "water", explanation: "En el diálogo: 'I'd like a glass of water'" },
-          { question: "I wake up at ___.", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "En la lectura: 'I wake up at 7:00'" }
-        ]
-      }
-    ]
-  },
 
-  /* ═══════════════════════════════════════════════════════════ */
-  /* NIVEL A2 - BÁSICO                                          */
-  /* ═══════════════════════════════════════════════════════════ */
-  A2: {
-    Grammar: [
-      {
-        title: "Pasado Simple (Regular)",
-        explanation: `<p>El Pasado Simple describe acciones terminadas en el pasado. Para verbos regulares, añadimos <strong>-ed</strong>.</p>
+        Reading: [
+            {
+                title: "Mi Familia",
+                readingText: `<p>Hello! My name is María. I am 25 years old. I live in Madrid with my family. My mother is a teacher and my father is a doctor. I have one brother. His name is Carlos. He is 20 years old and he is a student. We have a small dog. His name is Max. I love my family very much.</p>`,
+                exercises: [
+                    { question: "¿Cuántos años tiene María?", options: ["20", "22", "25", "30"], correct: "25", explanation: "El texto dice 'I am 25 years old.'" },
+                    { question: "¿Dónde vive María?", options: ["Barcelona", "Madrid", "Lisbon", "Paris"], correct: "Madrid", explanation: "Dice 'I live in Madrid'" },
+                    { question: "¿Qué es el padre de María?", options: ["Teacher", "Doctor", "Student", "Engineer"], correct: "Doctor", explanation: "Dice 'my father is a doctor'" },
+                    { question: "¿Cómo se llama el hermano?", options: ["Max", "Carlos", "Juan", "Luis"], correct: "Carlos", explanation: "Dice 'His name is Carlos'" }
+                ],
+                exam: [
+                    { question: "María is ___ years old.", options: ["20", "22", "25", "30"], correct: "25", explanation: "María tiene 25 años." },
+                    { question: "María's mother is a ___.", options: ["doctor", "teacher", "student", "nurse"], correct: "teacher", explanation: "Su madre es profesora." },
+                    { question: "Carlos is Maria's ___.", options: ["father", "brother", "friend", "cousin"], correct: "brother", explanation: "Carlos es su hermano." },
+                    { question: "The dog's name is ___.", options: ["Carlos", "María", "Max", "Madrid"], correct: "Max", explanation: "El perro se llama Max." }
+                ]
+            },
+            {
+                title: "Mi Rutina Diaria",
+                readingText: `<p>I wake up at 7:00 every morning. I have breakfast at 7:30. I usually eat toast and drink coffee. Then I go to work at 8:30. I work in an office. I have lunch at 1:00. In the afternoon, I finish work at 5:00. I go home and I cook dinner. After dinner, I watch TV or read a book. I go to bed at 11:00.</p>`,
+                exercises: [
+                    { question: "¿A qué hora se despierta?", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "Dice 'I wake up at 7:00'" },
+                    { question: "¿Qué desayuna?", options: ["Fruit", "Toast and coffee", "Cereal", "Nothing"], correct: "Toast and coffee", explanation: "Dice 'I usually eat toast and drink coffee'" },
+                    { question: "¿A qué hora termina de trabajar?", options: ["3:00", "4:00", "5:00", "6:00"], correct: "5:00", explanation: "Dice 'I finish work at 5:00'" }
+                ],
+                exam: [
+                    { question: "He wakes up at ___.", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "Se despierta a las 7." },
+                    { question: "He works in ___.", options: ["a hospital", "an office", "a school", "a shop"], correct: "an office", explanation: "Trabaja en una oficina." },
+                    { question: "He has lunch at ___.", options: ["12:00", "1:00", "2:00", "3:00"], correct: "1:00", explanation: "Almuerza a la 1:00." },
+                    { question: "After dinner, he ___ TV.", options: ["watches", "cooks", "reads", "plays"], correct: "watches", explanation: "Ve televisión después de cenar." }
+                ]
+            }
+        ],
+
+        Writing: [
+            {
+                title: "Descríbete a ti mismo",
+                writingPrompt: "Escribe un párrafo de al menos 50 palabras sobre ti. Incluye: tu nombre, edad, dónde vives, tu familia y qué te gusta hacer.",
+                wordCount: 50,
+                exercises: [
+                    { question: "¿Qué información DEBES incluir?", options: ["Solo tu nombre", "Nombre, edad, ciudad, familia y hobbies", "Solo tu edad", "Solo tu ciudad"], correct: "Nombre, edad, ciudad, familia y hobbies", explanation: "El prompt pide toda esa información." }
+                ],
+                exam: [
+                    { question: "¿Cuál es el mínimo de palabras?", options: ["10", "25", "50", "100"], correct: "50", explanation: "El ejercicio pide al menos 50 palabras." }
+                ]
+            },
+            {
+                title: "Una Carta a un Amigo",
+                writingPrompt: "Escribe una carta corta a un amigo inglés. Cuéntale sobre tu último fin de semana. ¿Qué hiciste? ¿Dónde fuiste? ¿Con quién estuviste?",
+                wordCount: 60,
+                exercises: [
+                    { question: "¿A quién escribes?", options: ["A un profesor", "A un amigo", "A tu jefe", "A un desconocido"], correct: "A un amigo", explanation: "El prompt dice 'a un amigo inglés'" }
+                ],
+                exam: [
+                    { question: "¿De qué hablas en la carta?", options: ["Tu trabajo", "Tu último fin de semana", "Tu familia", "Tu casa"], correct: "Tu último fin de semana", explanation: "Debes contar sobre tu último fin de semana." }
+                ]
+            },
+            {
+                title: "Mi Ciudad Favorita",
+                writingPrompt: "Describe tu ciudad o pueblo favorito. Menciona: el nombre, cómo es, qué lugares hay, y por qué te gusta.",
+                wordCount: 50,
+                exercises: [
+                    { question: "¿Qué debes describir?", options: ["Tu casa", "Tu ciudad favorita", "Tu escuela", "Tu trabajo"], correct: "Tu ciudad favorita", explanation: "El prompt pide describir tu ciudad favorita." }
+                ],
+                exam: [
+                    { question: "¿Qué NO necesitas mencionar?", options: ["El nombre", "Cómo es", "Tu comida favorita", "Por qué te gusta"], correct: "Tu comida favorita", explanation: "No se pide mencionar comida." }
+                ]
+            }
+        ],
+
+        Exam: [
+            {
+                title: "Examen Final A1",
+                explanation: `<p>Este examen evalúa todo lo aprendido en el nivel A1. Necesitas el 60% para aprobar.</p>`,
+                exam: [
+                    { question: "She ___ my sister.", options: ["am", "is", "are", "be"], correct: "is", explanation: "Con 'she' usamos 'is'" },
+                    { question: "I have ___ apple.", options: ["a", "an", "the", "-"], correct: "an", explanation: "'Apple' empieza con vocal → an" },
+                    { question: "Two ___ (child) are playing.", options: ["childs", "children", "childes", "child"], correct: "children", explanation: "'Child' es irregular → children" },
+                    { question: "Good ___! (por la mañana)", options: ["night", "morning", "evening", "bye"], correct: "morning", explanation: "'Good morning' = Buenos días" },
+                    { question: "I am ___ years old. (25)", options: ["twenty", "twenty-five", "twenty-fifth", "fifty"], correct: "twenty-five", explanation: "25 = twenty-five" },
+                    { question: "The plural of 'box' is ___.", options: ["boxs", "boxes", "boxies", "boxe"], correct: "boxes", explanation: "Termina en x → es" },
+                    { question: "___ to meet you!", options: ["Good", "Nice", "Happy", "Fine"], correct: "Nice", explanation: "'Nice to meet you' = Encantado" },
+                    { question: "A table for ___?", options: ["one", "two", "three", "four"], correct: "two", explanation: "En el diálogo del restaurante: 'A table for two?'" },
+                    { question: "She drinks ___.", options: ["a burger", "water", "a salad", "fries"], correct: "water", explanation: "En el diálogo: 'I'd like a glass of water'" },
+                    { question: "I wake up at ___.", options: ["6:00", "7:00", "8:00", "9:00"], correct: "7:00", explanation: "En la lectura: 'I wake up at 7:00'" }
+                ]
+            }
+        ]
+    },
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* NIVEL A2 - BÁSICO                                          */
+    /* ═══════════════════════════════════════════════════════════ */
+    A2: {
+        Grammar: [
+            {
+                title: "Pasado Simple (Regular)",
+                explanation: `<p>El Pasado Simple describe acciones terminadas en el pasado. Para verbos regulares, añadimos <strong>-ed</strong>.</p>
           <ul><li>Trabajar → worked</li><li>Jugar → played</li><li>Estudiar → studied (y → ied)</li></ul>
           <p>Negación: didn't + infinitivo | Pregunta: Did + sujeto + infinitivo?</p>`,
-        examples: ["I worked yesterday. (Trabajé ayer)", "She didn't play tennis. (Ella no jugó tenis)", "Did you study? (¿Estudiaste?)"],
-        exercises: [
-          { question: "Pasado de 'walk'", options: ["walked", "walks", "walking", "walk"], correct: "walked", explanation: "Añadimos -ed → walked" },
-          { question: "Pasado de 'study'", options: ["studied", "studys", "studyed", "studying"], correct: "studied", explanation: "y → ied → studied" },
-          { question: "Complete: She ___ TV yesterday.", options: ["watch", "watched", "watchs", "watching"], correct: "watched", explanation: "Añadimos -ed → watched" },
-          { question: "Negación: I ___ like the movie.", options: ["don't", "didn't", "not", "doesn't"], correct: "didn't", explanation: "Pasado simple → didn't + infinitivo" },
-          { question: "Pregunta: ___ you visit Paris?", options: ["Do", "Did", "Does", "Are"], correct: "Did", explanation: "Pasado simple → Did al inicio" }
-        ],
-        exam: [
-          { question: "They ___ football last Sunday.", options: ["play", "played", "playing", "plays"], correct: "played", explanation: "Pasado simple regular → +ed" },
-          { question: "I ___ (not/go) to the party.", options: ["don't go", "didn't go", "not went", "doesn't go"], correct: "didn't go", explanation: "Negación en pasado: didn't + infinitivo" },
-          { question: "___ she call you?", options: ["Do", "Did", "Does", "Is"], correct: "Did", explanation: "Pregunta en pasado → Did" },
-          { question: "He ___ (watch) a film.", options: ["watch", "watched", "watchs", "watching"], correct: "watched", explanation: "Pasado regular → watched" },
-          { question: "We ___ (not/study) for the exam.", options: ["don't study", "didn't study", "not studied", "studied not"], correct: "didn't study", explanation: "Negación: didn't + infinitivo" }
-        ]
-      },
-      {
-        title: "Pasado Simple (Irregular)",
-        explanation: `<p>Algunos verbos no siguen la regla de -ed. Debes memorizarlos:</p>
+                examples: ["I worked yesterday. (Trabajé ayer)", "She didn't play tennis. (Ella no jugó tenis)", "Did you study? (¿Estudiaste?)"],
+                exercises: [
+                    { question: "Pasado de 'walk'", options: ["walked", "walks", "walking", "walk"], correct: "walked", explanation: "Añadimos -ed → walked" },
+                    { question: "Pasado de 'study'", options: ["studied", "studys", "studyed", "studying"], correct: "studied", explanation: "y → ied → studied" },
+                    { question: "Complete: She ___ TV yesterday.", options: ["watch", "watched", "watchs", "watching"], correct: "watched", explanation: "Añadimos -ed → watched" },
+                    { question: "Negación: I ___ like the movie.", options: ["don't", "didn't", "not", "doesn't"], correct: "didn't", explanation: "Pasado simple → didn't + infinitivo" },
+                    { question: "Pregunta: ___ you visit Paris?", options: ["Do", "Did", "Does", "Are"], correct: "Did", explanation: "Pasado simple → Did al inicio" }
+                ],
+                exam: [
+                    { question: "They ___ football last Sunday.", options: ["play", "played", "playing", "plays"], correct: "played", explanation: "Pasado simple regular → +ed" },
+                    { question: "I ___ (not/go) to the party.", options: ["don't go", "didn't go", "not went", "doesn't go"], correct: "didn't go", explanation: "Negación en pasado: didn't + infinitivo" },
+                    { question: "___ she call you?", options: ["Do", "Did", "Does", "Is"], correct: "Did", explanation: "Pregunta en pasado → Did" },
+                    { question: "He ___ (watch) a film.", options: ["watch", "watched", "watchs", "watching"], correct: "watched", explanation: "Pasado regular → watched" },
+                    { question: "We ___ (not/study) for the exam.", options: ["don't study", "didn't study", "not studied", "studied not"], correct: "didn't study", explanation: "Negación: didn't + infinitivo" }
+                ]
+            },
+            {
+                title: "Pasado Simple (Irregular)",
+                explanation: `<p>Algunos verbos no siguen la regla de -ed. Debes memorizarlos:</p>
           <ul><li>go → went | eat → ate | see → saw | have → had | do → did</li><li>buy → bought | think → thought | bring → brought</li></ul>`,
-        examples: ["I went to Rome. (Fui a Roma)", "She ate pizza. (Ella comió pizza)", "We saw a film. (Vimos una película)"],
-        exercises: [
-          { question: "Pasado de 'go'", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went (irregular)" },
-          { question: "Pasado de 'eat'", options: ["eated", "ate", "eaten", "eating"], correct: "ate", explanation: "Eat → ate (irregular)" },
-          { question: "Pasado de 'see'", options: ["seed", "saw", "seen", "seeing"], correct: "saw", explanation: "See → saw (irregular)" },
-          { question: "Complete: I ___ a new car.", options: ["buy", "bought", "buyed", "buying"], correct: "bought", explanation: "Buy → bought (irregular)" },
-          { question: "Complete: She ___ the book to class.", options: ["bring", "brought", "bringed", "bringing"], correct: "brought", explanation: "Bring → brought (irregular)" }
-        ],
-        exam: [
-          { question: "He ___ (go) to London.", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went" },
-          { question: "We ___ (have) breakfast at 8.", options: ["haved", "had", "have", "having"], correct: "had", explanation: "Have → had" },
-          { question: "They ___ (see) the Eiffel Tower.", options: ["seed", "saw", "seen", "seeing"], correct: "saw", explanation: "See → saw" },
-          { question: "I ___ (do) my homework.", options: ["doed", "did", "done", "doing"], correct: "did", explanation: "Do → did" },
-          { question: "She ___ (think) it was easy.", options: ["thinked", "thought", "thinks", "thinking"], correct: "thought", explanation: "Think → thought" }
-        ]
-      },
-      {
-        title: "Comparativos y Superlativos",
-        explanation: `<p><strong>Comparativo:</strong> más/menos... que</p>
+                examples: ["I went to Rome. (Fui a Roma)", "She ate pizza. (Ella comió pizza)", "We saw a film. (Vimos una película)"],
+                exercises: [
+                    { question: "Pasado de 'go'", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went (irregular)" },
+                    { question: "Pasado de 'eat'", options: ["eated", "ate", "eaten", "eating"], correct: "ate", explanation: "Eat → ate (irregular)" },
+                    { question: "Pasado de 'see'", options: ["seed", "saw", "seen", "seeing"], correct: "saw", explanation: "See → saw (irregular)" },
+                    { question: "Complete: I ___ a new car.", options: ["buy", "bought", "buyed", "buying"], correct: "bought", explanation: "Buy → bought (irregular)" },
+                    { question: "Complete: She ___ the book to class.", options: ["bring", "brought", "bringed", "bringing"], correct: "brought", explanation: "Bring → brought (irregular)" }
+                ],
+                exam: [
+                    { question: "He ___ (go) to London.", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went" },
+                    { question: "We ___ (have) breakfast at 8.", options: ["haved", "had", "have", "having"], correct: "had", explanation: "Have → had" },
+                    { question: "They ___ (see) the Eiffel Tower.", options: ["seed", "saw", "seen", "seeing"], correct: "saw", explanation: "See → saw" },
+                    { question: "I ___ (do) my homework.", options: ["doed", "did", "done", "doing"], correct: "did", explanation: "Do → did" },
+                    { question: "She ___ (think) it was easy.", options: ["thinked", "thought", "thinks", "thinking"], correct: "thought", explanation: "Think → thought" }
+                ]
+            },
+            {
+                title: "Comparativos y Superlativos",
+                explanation: `<p><strong>Comparativo:</strong> más/menos... que</p>
           <ul><li>Cortos: +er (tall → taller)</li><li>Largos: more/less + adjetivo (more expensive)</li></ul>
           <p><strong>Superlativo:</strong> el/la más/menos...</p>
           <ul><li>Cortos: +est (tall → tallest)</li><li>Largos: most/least + adjetivo (most beautiful)</li></ul>`,
-        examples: ["John is taller than Mike. (John es más alto que Mike)", "This is the most expensive car. (Este es el coche más caro)", "She is less happy than before."],
-        exercises: [
-          { question: "Comparativo de 'big'", options: ["biger", "bigger", "more big", "biggest"], correct: "bigger", explanation: "CVC → doble consonante + er → bigger" },
-          { question: "Superlativo de 'happy'", options: ["happier", "happiest", "more happy", "most happy"], correct: "happiest", explanation: "y → i + est → happiest" },
-          { question: "Comparativo de 'expensive'", options: ["expensiver", "more expensive", "expensivest", "most expensive"], correct: "more expensive", explanation: "Largo → more + adjetivo" },
-          { question: "Complete: She is ___ than her sister.", options: ["tall", "taller", "tallest", "more tall"], correct: "taller", explanation: "Comparativo → taller" },
-          { question: "Complete: This is the ___ book.", options: ["good", "better", "best", "more good"], correct: "best", explanation: "Good → best (superlativo irregular)" }
+                examples: ["John is taller than Mike. (John es más alto que Mike)", "This is the most expensive car. (Este es el coche más caro)", "She is less happy than before."],
+                exercises: [
+                    { question: "Comparativo de 'big'", options: ["biger", "bigger", "more big", "biggest"], correct: "bigger", explanation: "CVC → doble consonante + er → bigger" },
+                    { question: "Superlativo de 'happy'", options: ["happier", "happiest", "more happy", "most happy"], correct: "happiest", explanation: "y → i + est → happiest" },
+                    { question: "Comparativo de 'expensive'", options: ["expensiver", "more expensive", "expensivest", "most expensive"], correct: "more expensive", explanation: "Largo → more + adjetivo" },
+                    { question: "Complete: She is ___ than her sister.", options: ["tall", "taller", "tallest", "more tall"], correct: "taller", explanation: "Comparativo → taller" },
+                    { question: "Complete: This is the ___ book.", options: ["good", "better", "best", "more good"], correct: "best", explanation: "Good → best (superlativo irregular)" }
+                ],
+                exam: [
+                    { question: "Tokyo is ___ than Madrid.", options: ["big", "bigger", "biggest", "more big"], correct: "bigger", explanation: "Comparativo de big → bigger" },
+                    { question: "Mount Everest is the ___ mountain.", options: ["high", "higher", "highest", "most high"], correct: "highest", explanation: "Superlativo de high → highest" },
+                    { question: "This exam is ___ than the last one.", options: ["difficult", "more difficult", "difficulter", "most difficult"], correct: "more difficult", explanation: "Largo → more + adjetivo" },
+                    { question: "She is the ___ student.", options: ["good", "better", "best", "most good"], correct: "best", explanation: "Good → best" },
+                    { question: "My house is ___ (small) than yours.", options: ["small", "smaller", "smallest", "more small"], correct: "smaller", explanation: "Comparativo → smaller" }
+                ]
+            }
         ],
-        exam: [
-          { question: "Tokyo is ___ than Madrid.", options: ["big", "bigger", "biggest", "more big"], correct: "bigger", explanation: "Comparativo de big → bigger" },
-          { question: "Mount Everest is the ___ mountain.", options: ["high", "higher", "highest", "most high"], correct: "highest", explanation: "Superlativo de high → highest" },
-          { question: "This exam is ___ than the last one.", options: ["difficult", "more difficult", "difficulter", "most difficult"], correct: "more difficult", explanation: "Largo → more + adjetivo" },
-          { question: "She is the ___ student.", options: ["good", "better", "best", "most good"], correct: "best", explanation: "Good → best" },
-          { question: "My house is ___ (small) than yours.", options: ["small", "smaller", "smallest", "more small"], correct: "smaller", explanation: "Comparativo → smaller" }
-        ]
-      }
-    ],
-    
-    Vocabulary: [
-      {
-        title: "Viajes y Transporte",
-        vocabList: [
-          { word: "Airport", type: "n", meaning: "Aeropuerto", example: "We arrived at the airport early." },
-          { word: "Ticket", type: "n", meaning: "Billete", example: "I bought a train ticket." },
-          { word: "Passport", type: "n", meaning: "Pasaporte", example: "Don't forget your passport!" },
-          { word: "Luggage", type: "n", meaning: "Equipaje", example: "My luggage is very heavy." },
-          { word: "Flight", type: "n", meaning: "Vuelo", example: "Our flight leaves at 9 AM." },
-          { word: "Platform", type: "n", meaning: "Andén", example: "The train leaves from platform 3." },
-          { word: "Reservation", type: "n", meaning: "Reserva", example: "I have a reservation for tonight." },
-          { word: "Customs", type: "n", meaning: "Aduana", example: "We went through customs quickly." }
+
+        Vocabulary: [
+            {
+                title: "Viajes y Transporte",
+                vocabList: [
+                    { word: "Airport", type: "n", meaning: "Aeropuerto", example: "We arrived at the airport early." },
+                    { word: "Ticket", type: "n", meaning: "Billete", example: "I bought a train ticket." },
+                    { word: "Passport", type: "n", meaning: "Pasaporte", example: "Don't forget your passport!" },
+                    { word: "Luggage", type: "n", meaning: "Equipaje", example: "My luggage is very heavy." },
+                    { word: "Flight", type: "n", meaning: "Vuelo", example: "Our flight leaves at 9 AM." },
+                    { word: "Platform", type: "n", meaning: "Andén", example: "The train leaves from platform 3." },
+                    { word: "Reservation", type: "n", meaning: "Reserva", example: "I have a reservation for tonight." },
+                    { word: "Customs", type: "n", meaning: "Aduana", example: "We went through customs quickly." }
+                ],
+                exercises: [
+                    { question: "¿Dónde compras un billete?", options: ["At the airport", "At the restaurant", "At the hospital", "At school"], correct: "At the airport", explanation: "Los billetes de avión se compran en el aeropuerto" },
+                    { question: "¿Qué necesitas para viajar al extranjero?", options: ["A book", "A passport", "A pen", "A phone"], correct: "A passport", explanation: "Necesitas pasaporte para viajar internacionalmente" },
+                    { question: "¿Dónde dejas tu equipaje?", options: ["In the kitchen", "In the hotel", "At the airport", "In the car"], correct: "At the airport", explanation: "El equipaje se factura en el aeropuerto" }
+                ],
+                exam: [
+                    { question: "You need a ___ to fly internationally.", options: ["ticket", "passport", "pen", "map"], correct: "passport", explanation: "Necesitas pasaporte para volar internacionalmente." },
+                    { question: "The ___ leaves at 9 AM.", options: ["bus", "flight", "car", "bike"], correct: "flight", explanation: "El vuelo sale a las 9." },
+                    { question: "I made a ___ at the hotel.", options: ["flight", "ticket", "reservation", "passport"], correct: "reservation", explanation: "Haces una reserva en el hotel." },
+                    { question: "My ___ is very heavy.", options: ["passport", "ticket", "luggage", "flight"], correct: "luggage", explanation: "El equipaje puede ser pesado." },
+                    { question: "The train leaves from ___ 3.", options: ["gate", "platform", "door", "window"], correct: "platform", explanation: "El tren sale del andén 3." }
+                ]
+            },
+            {
+                title: "Comida y Restaurantes",
+                vocabList: [
+                    { word: "Starter", type: "n", meaning: "Entrante", example: "I'll have the soup as a starter." },
+                    { word: "Main course", type: "n", meaning: "Plato principal", example: "The steak is the main course." },
+                    { word: "Dessert", type: "n", meaning: "Postre", example: "For dessert, I'll have ice cream." },
+                    { word: "Bill", type: "n", meaning: "Cuenta", example: "Can I have the bill, please?" },
+                    { word: "Tip", type: "n", meaning: "Propina", example: "I left a 10% tip." },
+                    { word: "Spicy", type: "adj", meaning: "Picante", example: "This curry is very spicy." },
+                    { word: "Delicious", type: "adj", meaning: "Delicioso", example: "The cake was delicious!" },
+                    { word: "Vegetarian", type: "adj/n", meaning: "Vegetariano", example: "Do you have vegetarian options?" }
+                ],
+                exercises: [
+                    { question: "¿Qué pides antes del plato principal?", options: ["Dessert", "Starter", "Bill", "Tip"], correct: "Starter", explanation: "El entrante (starter) va antes del plato principal" },
+                    { question: "¿Cómo pides la cuenta?", options: ["The menu, please", "The bill, please", "The food, please", "The water, please"], correct: "The bill, please", explanation: "'The bill, please' = La cuenta, por favor" },
+                    { question: "¿Qué es 'spicy'?", options: ["Dulce", "Picante", "Salado", "Amargo"], correct: "Picante", explanation: "Spicy = picante" }
+                ],
+                exam: [
+                    { question: "I'll have the soup as a ___.", options: ["main course", "dessert", "starter", "bill"], correct: "starter", explanation: "La sopa como entrante." },
+                    { question: "Can I have the ___, please?", options: ["menu", "bill", "tip", "plate"], correct: "bill", explanation: "Pides la cuenta con 'bill'." },
+                    { question: "The chocolate cake was ___!", options: ["spicy", "delicious", "vegetarian", "expensive"], correct: "delicious", explanation: "Delicioso = delicious." },
+                    { question: "I left a 15% ___.", options: ["bill", "menu", "tip", "starter"], correct: "tip", explanation: "Dejas una propina (tip)." },
+                    { question: "Do you have ___ options?", options: ["spicy", "delicious", "vegetarian", "expensive"], correct: "vegetarian", explanation: "Opciones vegetarianas." }
+                ]
+            }
         ],
-        exercises: [
-          { question: "¿Dónde compras un billete?", options: ["At the airport", "At the restaurant", "At the hospital", "At school"], correct: "At the airport", explanation: "Los billetes de avión se compran en el aeropuerto" },
-          { question: "¿Qué necesitas para viajar al extranjero?", options: ["A book", "A passport", "A pen", "A phone"], correct: "A passport", explanation: "Necesitas pasaporte para viajar internacionalmente" },
-          { question: "¿Dónde dejas tu equipaje?", options: ["In the kitchen", "In the hotel", "At the airport", "In the car"], correct: "At the airport", explanation: "El equipaje se factura en el aeropuerto" }
-        ],
-        exam: [
-          { question: "You need a ___ to fly internationally.", options: ["ticket", "passport", "pen", "map"], correct: "passport", explanation: "Necesitas pasaporte para volar internacionalmente." },
-          { question: "The ___ leaves at 9 AM.", options: ["bus", "flight", "car", "bike"], correct: "flight", explanation: "El vuelo sale a las 9." },
-          { question: "I made a ___ at the hotel.", options: ["flight", "ticket", "reservation", "passport"], correct: "reservation", explanation: "Haces una reserva en el hotel." },
-          { question: "My ___ is very heavy.", options: ["passport", "ticket", "luggage", "flight"], correct: "luggage", explanation: "El equipaje puede ser pesado." },
-          { question: "The train leaves from ___ 3.", options: ["gate", "platform", "door", "window"], correct: "platform", explanation: "El tren sale del andén 3." }
-        ]
-      },
-      {
-        title: "Comida y Restaurantes",
-        vocabList: [
-          { word: "Starter", type: "n", meaning: "Entrante", example: "I'll have the soup as a starter." },
-          { word: "Main course", type: "n", meaning: "Plato principal", example: "The steak is the main course." },
-          { word: "Dessert", type: "n", meaning: "Postre", example: "For dessert, I'll have ice cream." },
-          { word: "Bill", type: "n", meaning: "Cuenta", example: "Can I have the bill, please?" },
-          { word: "Tip", type: "n", meaning: "Propina", example: "I left a 10% tip." },
-          { word: "Spicy", type: "adj", meaning: "Picante", example: "This curry is very spicy." },
-          { word: "Delicious", type: "adj", meaning: "Delicioso", example: "The cake was delicious!" },
-          { word: "Vegetarian", type: "adj/n", meaning: "Vegetariano", example: "Do you have vegetarian options?" }
-        ],
-        exercises: [
-          { question: "¿Qué pides antes del plato principal?", options: ["Dessert", "Starter", "Bill", "Tip"], correct: "Starter", explanation: "El entrante (starter) va antes del plato principal" },
-          { question: "¿Cómo pides la cuenta?", options: ["The menu, please", "The bill, please", "The food, please", "The water, please"], correct: "The bill, please", explanation: "'The bill, please' = La cuenta, por favor" },
-          { question: "¿Qué es 'spicy'?", options: ["Dulce", "Picante", "Salado", "Amargo"], correct: "Picante", explanation: "Spicy = picante" }
-        ],
-        exam: [
-          { question: "I'll have the soup as a ___.", options: ["main course", "dessert", "starter", "bill"], correct: "starter", explanation: "La sopa como entrante." },
-          { question: "Can I have the ___, please?", options: ["menu", "bill", "tip", "plate"], correct: "bill", explanation: "Pides la cuenta con 'bill'." },
-          { question: "The chocolate cake was ___!", options: ["spicy", "delicious", "vegetarian", "expensive"], correct: "delicious", explanation: "Delicioso = delicious." },
-          { question: "I left a 15% ___.", options: ["bill", "menu", "tip", "starter"], correct: "tip", explanation: "Dejas una propina (tip)." },
-          { question: "Do you have ___ options?", options: ["spicy", "delicious", "vegetarian", "expensive"], correct: "vegetarian", explanation: "Opciones vegetarianas." }
-        ]
-      }
-    ],
-    
-    Listening: [
-      {
-        title: "Reservando un Hotel",
-        listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
+
+        Listening: [
+            {
+                title: "Reservando un Hotel",
+                listeningText: `<div style="background:#f1f5f9;padding:20px;border-radius:8px;font-family:monospace;line-height:2;">
           <strong>Receptionist:</strong> Good afternoon. Sunset Hotel. How can I help you?<br>
           <strong>Caller:</strong> Hi. I'd like to book a room, please.<br>
           <strong>Receptionist:</strong> Certainly. For how many nights?<br>
@@ -2255,113 +2211,127 @@ const courseData = {
           <strong>Caller:</strong> That sounds perfect. I'll take it.<br>
           <strong>Receptionist:</strong> Great. Can I have your name, please?
         </div>`,
-        exercises: [
-          { question: "¿Cuántas noches quiere quedarse?", options: ["One", "Two", "Three", "Four"], correct: "Three", explanation: "Dice 'Three nights'" },
-          { question: "¿Cuántos huéspedes hay?", options: ["One", "Two", "Three", "Four"], correct: "Two", explanation: "Dice 'Two adults'" },
-          { question: "¿Cuánto cuesta la habitación por noche?", options: ["£100", "£110", "£120", "£130"], correct: "£120", explanation: "Dice '£120 per night'" }
+                exercises: [
+                    { question: "¿Cuántas noches quiere quedarse?", options: ["One", "Two", "Three", "Four"], correct: "Three", explanation: "Dice 'Three nights'" },
+                    { question: "¿Cuántos huéspedes hay?", options: ["One", "Two", "Three", "Four"], correct: "Two", explanation: "Dice 'Two adults'" },
+                    { question: "¿Cuánto cuesta la habitación por noche?", options: ["£100", "£110", "£120", "£130"], correct: "£120", explanation: "Dice '£120 per night'" }
+                ],
+                exam: [
+                    { question: "The caller wants to stay for ___ nights.", options: ["two", "three", "four", "five"], correct: "three", explanation: "Quiere quedarse 3 noches." },
+                    { question: "There are ___ guests.", options: ["one", "two", "three", "four"], correct: "two", explanation: "Dos adultos." },
+                    { question: "The room costs ___ per night.", options: ["£100", "£110", "£120", "£130"], correct: "£120", explanation: "120 libras por noche." },
+                    { question: "The room has a view of the ___.", options: ["mountain", "city", "sea", "garden"], correct: "sea", explanation: "Vista al mar (sea view)." },
+                    { question: "The stay is from Friday to ___.", options: ["Saturday", "Sunday", "Monday", "Tuesday"], correct: "Monday", explanation: "De viernes a lunes." }
+                ]
+            }
         ],
-        exam: [
-          { question: "The caller wants to stay for ___ nights.", options: ["two", "three", "four", "five"], correct: "three", explanation: "Quiere quedarse 3 noches." },
-          { question: "There are ___ guests.", options: ["one", "two", "three", "four"], correct: "two", explanation: "Dos adultos." },
-          { question: "The room costs ___ per night.", options: ["£100", "£110", "£120", "£130"], correct: "£120", explanation: "120 libras por noche." },
-          { question: "The room has a view of the ___.", options: ["mountain", "city", "sea", "garden"], correct: "sea", explanation: "Vista al mar (sea view)." },
-          { question: "The stay is from Friday to ___.", options: ["Saturday", "Sunday", "Monday", "Tuesday"], correct: "Monday", explanation: "De viernes a lunes." }
-        ]
-      }
-    ],
-    
-    Reading: [
-      {
-        title: "Un Día en Londres",
-        readingText: `<p>Last summer, I visited London with my best friend. We stayed there for five days. On the first day, we went to the British Museum. It was amazing! We saw old Egyptian mummies and Greek statues. On the second day, we visited Buckingham Palace. We watched the Changing of the Guard. It was very colorful and interesting.</p>
-          <p>On the third day, we took a boat on the River Thames. We saw the Tower Bridge and the London Eye. The weather was sunny but a little windy. On the fourth day, we went shopping in Oxford Street. I bought some souvenirs for my family. On the last day, we visited a traditional pub and tried fish and chips. It was a fantastic trip!</p>`,
-        exercises: [
-          { question: "¿Cuánto tiempo estuvieron en Londres?", options: ["Three days", "Four days", "Five days", "Six days"], correct: "Five days", explanation: "Dice 'We stayed there for five days'" },
-          { question: "¿Qué visitaron el primer día?", options: ["Buckingham Palace", "The British Museum", "Tower Bridge", "Oxford Street"], correct: "The British Museum", explanation: "Dice 'On the first day, we went to the British Museum'" },
-          { question: "¿Qué compraron en Oxford Street?", options: ["Food", "Souvenirs", "Clothes", "Books"], correct: "Souvenirs", explanation: "Dice 'I bought some souvenirs'" },
-          { question: "¿Qué comieron en el pub?", options: ["Pizza", "Fish and chips", "Burger", "Pasta"], correct: "Fish and chips", explanation: "Dice 'tried fish and chips'" }
-        ],
-        exam: [
-          { question: "They visited London with a ___.", options: ["family", "best friend", "group", "alone"], correct: "best friend", explanation: "Fue con su mejor amigo." },
-          { question: "The Changing of the Guard is at ___.", options: ["the museum", "Buckingham Palace", "Tower Bridge", "Oxford Street"], correct: "Buckingham Palace", explanation: "Vieron el cambio de guardia en Buckingham Palace." },
-          { question: "They took a boat on the ___.", options: ["sea", "lake", "River Thames", "canal"], correct: "River Thames", explanation: "Navegaron por el Támesis." },
-          { question: "The weather was ___ but windy.", options: ["rainy", "cloudy", "sunny", "snowy"], correct: "sunny", explanation: "Hacía sol pero ventoso." },
-          { question: "They tried ___ in a pub.", options: ["pizza", "fish and chips", "sushi", "tacos"], correct: "fish and chips", explanation: "Probaron fish and chips." }
-        ]
-      }
-    ],
-    
-    Writing: [
-      {
-        title: "Mi Último Viaje",
-        writingPrompt: "Escribe sobre tu último viaje. Incluye: dónde fuiste, con quién, qué hiciste, dónde te alojaste, y si te gustó.",
-        wordCount: 60,
-        exercises: [
-          { question: "¿Qué tiempo verbal debes usar principalmente?", options: ["Presente", "Pasado", "Futuro", "Condicional"], correct: "Pasado", explanation: "Hablas de un viaje pasado → pasado simple" }
-        ],
-        exam: [
-          { question: "¿Cuántas palabras mínimo?", options: ["30", "40", "60", "100"], correct: "60", explanation: "Mínimo 60 palabras." }
-        ]
-      },
-      {
-        title: "Una Reseña de Restaurante",
-        writingPrompt: "Escribe una reseña corta de un restaurante que visitaste. Describe: la comida, el servicio, el ambiente, y si lo recomendarías.",
-        wordCount: 60,
-        exercises: [
-          { question: "¿Qué NO debes describir?", options: ["La comida", "El servicio", "Tu casa", "El ambiente"], correct: "Tu casa", explanation: "No describes tu casa, describes el restaurante." }
-        ],
-        exam: [
-          { question: "¿Debes dar tu opinión?", options: ["No", "Sí", "Solo los hechos", "Solo el menú"], correct: "Sí", explanation: "Una reseña incluye tu opinión personal." }
-        ]
-      }
-    ],
-    
-    Exam: [
-      {
-        title: "Examen Final A2",
-        exam: [
-          { question: "She ___ (work) yesterday.", options: ["work", "worked", "working", "works"], correct: "worked", explanation: "Pasado simple regular → +ed" },
-          { question: "I ___ (go) to Paris last year.", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went (irregular)" },
-          { question: "Tokyo is ___ than my city.", options: ["big", "bigger", "biggest", "more big"], correct: "bigger", explanation: "Comparativo → bigger" },
-          { question: "This is the ___ mountain in Spain.", options: ["high", "higher", "highest", "most high"], correct: "highest", explanation: "Superlativo → highest" },
-          { question: "___ you visit the museum?", options: ["Do", "Did", "Does", "Are"], correct: "Did", explanation: "Pregunta en pasado → Did" },
-          { question: "I need my ___ to travel.", options: ["ticket", "passport", "menu", "bill"], correct: "passport", explanation: "Necesitas pasaporte para viajar." },
-          { question: "Can I have the ___, please?", options: ["starter", "main course", "bill", "dessert"], correct: "bill", explanation: "Pides la cuenta con 'bill'." },
-          { question: "They stayed in London for ___ days.", options: ["three", "four", "five", "six"], correct: "five", explanation: "En la lectura: five days." },
-          { question: "The room has a view of the ___.", options: ["mountain", "sea", "city", "garden"], correct: "sea", explanation: "Vista al mar." },
-          { question: "This curry is very ___.", options: ["sweet", "spicy", "sour", "bitter"], correct: "spicy", explanation: "Picante = spicy." }
-        ]
-      }
-    ]
-  },
 
-  /* ═══════════════════════════════════════════════════════════ */
-  /* NIVEL B1 - INTERMEDIO                                      */
-  /* ═══════════════════════════════════════════════════════════ */
-  B1: {
-    Grammar: [
-      {
-        title: "Present Perfect",
-        explanation: `<p>El Present Perfect conecta el pasado con el presente. Se forma con <strong>have/has + participio pasado</strong>.</p>
-          <p>Usos principales:</p>
-          <ul><li>Experiencias de vida (I have visited Paris)</li><li>Acciones que empezaron en el pasado y continúan (I have lived here for 5 years)</li><li>Resultados presentes de acciones pasadas (I have lost my keys)</li></ul>
-          <p>Palabras clave: ever, never, already, yet, just, for, since</p>`,
-        examples: ["I have never eaten sushi. (Nunca he comido sushi)", "She has just arrived. (Acaba de llegar)", "We have lived here since 2010."],
-        exercises: [
-          { question: "Complete: I ___ (never/be) to Japan.", options: ["have never been", "never was", "have never being", "am never"], correct: "have never been", explanation: "Present Perfect: have + never + participio" },
-          { question: "Complete: She ___ (just/finish) her homework.", options: ["just finished", "has just finished", "have just finished", "is just finishing"], correct: "has just finished", explanation: "Just → Present Perfect: has + just + participio" },
-          { question: "Complete: They ___ (live) here for 10 years.", options: ["live", "lived", "have lived", "are living"], correct: "have lived", explanation: "For + período → Present Perfect" },
-          { question: "Complete: ___ you ever ___ (try) paella?", options: ["Did...try", "Have...tried", "Do...try", "Are...trying"], correct: "Have...tried", explanation: "Ever → Present Perfect: Have + sujeto + participio" },
-          { question: "Complete: I haven't finished ___ .", options: ["already", "yet", "just", "ever"], correct: "yet", explanation: "Yet se usa en negaciones y preguntas con Present Perfect" }
+        Reading: [
+            {
+                title: "Un Día en Londres",
+                readingText: `<p>Last summer, I visited London with my best friend. We stayed there for five days. On the first day, we went to the British Museum. It was amazing! We saw old Egyptian mummies and Greek statues. On the second day, we visited Buckingham Palace. We watched the Changing of the Guard. It was very colorful and interesting.</p>
+          <p>On the third day, we took a boat on the River Thames. We saw the Tower Bridge and the London Eye. The weather was sunny but a little windy. On the fourth day, we went shopping in Oxford Street. I bought some souvenirs for my family. On the last day, we visited a traditional pub and tried fish and chips. It was a fantastic trip!</p>`,
+                exercises: [
+                    { question: "¿Cuánto tiempo estuvieron en Londres?", options: ["Three days", "Four days", "Five days", "Six days"], correct: "Five days", explanation: "Dice 'We stayed there for five days'" },
+                    { question: "¿Qué visitaron el primer día?", options: ["Buckingham Palace", "The British Museum", "Tower Bridge", "Oxford Street"], correct: "The British Museum", explanation: "Dice 'On the first day, we went to the British Museum'" },
+                    { question: "¿Qué compraron en Oxford Street?", options: ["Food", "Souvenirs", "Clothes", "Books"], correct: "Souvenirs", explanation: "Dice 'I bought some souvenirs'" },
+                    { question: "¿Qué comieron en el pub?", options: ["Pizza", "Fish and chips", "Burger", "Pasta"], correct: "Fish and chips", explanation: "Dice 'tried fish and chips'" }
+                ],
+                exam: [
+                    { question: "They visited London with a ___.", options: ["family", "best friend", "group", "alone"], correct: "best friend", explanation: "Fue con su mejor amigo." },
+                    { question: "The Changing of the Guard is at ___.", options: ["the museum", "Buckingham Palace", "Tower Bridge", "Oxford Street"], correct: "Buckingham Palace", explanation: "Vieron el cambio de guardia en Buckingham Palace." },
+                    { question: "They took a boat on the ___.", options: ["sea", "lake", "River Thames", "canal"], correct: "River Thames", explanation: "Navegaron por el Támesis." },
+                    { question: "The weather was ___ but windy.", options: ["rainy", "cloudy", "sunny", "snowy"], correct: "sunny", explanation: "Hacía sol pero ventoso." },
+                    { question: "They tried ___ in a pub.", options: ["pizza", "fish and chips", "sushi", "tacos"], correct: "fish and chips", explanation: "Probaron fish and chips." }
+                ]
+            }
         ],
-        exam: [
-          { question: "I ___ (never/see) that film.", options: ["never saw", "have never seen", "have never see", "did never see"], correct: "have never seen", explanation: "Never + Present Perfect → have never seen" },
-          { question: "She has ___ (live) here since 2015.", options: ["live", "lived", "living", "lives"], correct: "lived", explanation: "Since + momento → Present Perfect" },
-          { question: "Have you finished your homework ___?", options: ["already", "yet", "just", "ever"], correct: "yet", explanation: "Yet en preguntas con Present Perfect" },
-          { question: "They have ___ (be) married for 20 years.", options: ["be", "been", "being", "was"], correct: "been", explanation: "Been es el participio de be" },
-          { question: "I have ___ (lose) my keys!", options: ["lose", "lost", "losed", "losing"], correct: "lost", explanation: "Lose → lost (participio)" }
+
+        Writing: [
+            {
+                title: "Mi Último Viaje",
+                writingPrompt: "Escribe sobre tu último viaje. Incluye: dónde fuiste, con quién, qué hiciste, dónde te alojaste, y si te gustó.",
+                wordCount: 60,
+                exercises: [
+                    { question: "¿Qué tiempo verbal debes usar principalmente?", options: ["Presente", "Pasado", "Futuro", "Condicional"], correct: "Pasado", explanation: "Hablas de un viaje pasado → pasado simple" }
+                ],
+                exam: [
+                    { question: "¿Cuántas palabras mínimo?", options: ["30", "40", "60", "100"], correct: "60", explanation: "Mínimo 60 palabras." }
+                ]
+            },
+            {
+                title: "Una Reseña de Restaurante",
+                writingPrompt: "Escribe una reseña corta de un restaurante que visitaste. Describe: la comida, el servicio, el ambiente, y si lo recomendarías.",
+                wordCount: 60,
+                exercises: [
+                    { question: "¿Qué NO debes describir?", options: ["La comida", "El servicio", "Tu casa", "El ambiente"], correct: "Tu casa", explanation: "No describes tu casa, describes el restaurante." }
+                ],
+                exam: [
+                    { question: "¿Debes dar tu opinión?", options: ["No", "Sí", "Solo los hechos", "Solo el menú"], correct: "Sí", explanation: "Una reseña incluye tu opinión personal." }
+                ]
+            }
+        ],
+
+        Exam: [
+            {
+                title: "Examen Final A2",
+                exam: [
+                    { question: "She ___ (work) yesterday.", options: ["work", "worked", "working", "works"], correct: "worked", explanation: "Pasado simple regular → +ed" },
+                    { question: "I ___ (go) to Paris last year.", options: ["goed", "went", "gone", "going"], correct: "went", explanation: "Go → went (irregular)" },
+                    { question: "Tokyo is ___ than my city.", options: ["big", "bigger", "biggest", "more big"], correct: "bigger", explanation: "Comparativo → bigger" },
+                    { question: "This is the ___ mountain in Spain.", options: ["high", "higher", "highest", "most high"], correct: "highest", explanation: "Superlativo → highest" },
+                    { question: "___ you visit the museum?", options: ["Do", "Did", "Does", "Are"], correct: "Did", explanation: "Pregunta en pasado → Did" },
+                    { question: "I need my ___ to travel.", options: ["ticket", "passport", "menu", "bill"], correct: "passport", explanation: "Necesitas pasaporte para viajar." },
+                    { question: "Can I have the ___, please?", options: ["starter", "main course", "bill", "dessert"], correct: "bill", explanation: "Pides la cuenta con 'bill'." },
+                    { question: "They stayed in London for ___ days.", options: ["three", "four", "five", "six"], correct: "five", explanation: "En la lectura: five days." },
+                    { question: "The room has a view of the ___.", options: ["mountain", "sea", "city", "garden"], correct: "sea", explanation: "Vista al mar." },
+                    { question: "This curry is very ___.", options: ["sweet", "spicy", "sour", "bitter"], correct: "spicy", explanation: "Picante = spicy." }
+                ]
+            }
         ]
-      },
-      {
-        title: "Futuro: Will vs Going to",
-        explanation: `<p><strong>Will:</strong> decisiones espontáneas, promesas, predicciones generales</
+    },
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /* NIVEL B1 - INTERMEDIO                                      */
+    /* ═══════════════════════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════════════ */
+    B1: {
+        Grammar: [
+            {
+                title: "Present Perfect",
+                explanation: `<p>El Present Perfect conecta el pasado con el presente. Se forma con <strong>have/has + participio pasado</strong>.</p>
+        <p>Usos principales:</p>
+        <ul>
+          <li>Experiencias de vida (I have visited Paris)</li>
+          <li>Acciones que empezaron en el pasado y continúan (I have lived here for 5 years)</li>
+          <li>Resultados presentes de acciones pasadas (I have lost my keys)</li>
+        </ul>
+        <p>Palabras clave: ever, never, already, yet, just, for, since</p>`,
+                examples: [
+                    "I have never eaten sushi. (Nunca he comido sushi)",
+                    "She has just arrived. (Acaba de llegar)",
+                    "We have lived here since 2010."
+                ],
+                exercises: [
+                    { question: "Complete: I ___ (never/be) to Japan.", options: ["have never been", "never was", "have never being", "am never"], correct: "have never been", explanation: "Present Perfect: have + never + participio" },
+                    { question: "Complete: She ___ (just/finish) her homework.", options: ["just finished", "has just finished", "have just finished", "is just finishing"], correct: "has just finished", explanation: "Just → Present Perfect: has + just + participio" },
+                    { question: "Complete: They ___ (live) here for 10 years.", options: ["live", "lived", "have lived", "are living"], correct: "have lived", explanation: "For + período → Present Perfect" },
+                    { question: "Complete: ___ you ever ___ (try) paella?", options: ["Did...try", "Have...tried", "Do...try", "Are...trying"], correct: "Have...tried", explanation: "Ever → Present Perfect: Have + sujeto + participio" },
+                    { question: "Complete: I haven't finished ___ .", options: ["already", "yet", "just", "ever"], correct: "yet", explanation: "Yet se usa en negaciones y preguntas con Present Perfect" }
+                ],
+                exam: [
+                    { question: "I ___ (never/see) that film.", options: ["never saw", "have never seen", "have never see", "did never see"], correct: "have never seen", explanation: "Never + Present Perfect → have never seen" },
+                    { question: "She has ___ (live) here since 2015.", options: ["live", "lived", "living", "lives"], correct: "lived", explanation: "Since + momento → Present Perfect" },
+                    { question: "Have you finished your homework ___?", options: ["already", "yet", "just", "ever"], correct: "yet", explanation: "Yet en preguntas con Present Perfect" },
+                    { question: "They have ___ (be) married for 20 years.", options: ["be", "been", "being", "was"], correct: "been", explanation: "Been es el participio de be" },
+                    { question: "I have ___ (lose) my keys!", options: ["lose", "lost", "losed", "losing"], correct: "lost", explanation: "Lose → lost (participio)" }
+                ]
+            },
+            {
+                title: "Futuro: Will vs Going to",
+                explanation: `<p><strong>Will:</strong> decisiones espontáneas, promesas, predicciones generales</p>`
+            }
+        ]
+
+    }
+}

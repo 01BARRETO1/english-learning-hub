@@ -4,455 +4,535 @@ html_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Learning Hub - Aprende Inglés desde A1 hasta C1</title>
+    <title>English Learning Hub - Aprende Inglés A1-C1</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="app">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <span class="logo-text">English Hub</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">✕</button>
+        </div>
         
-        <!-- ===== BARRA DE NAVEGACIÓN ===== -->
-        <nav id="mainNav" class="main-nav hidden">
-            <div class="nav-brand" onclick="goToHome()">
-                <span class="nav-logo">🌍</span>
-                <span class="nav-title">English Hub</span>
-            </div>
-            <div class="nav-links">
-                <button class="nav-link" onclick="goToHome()">Inicio</button>
-                <button class="nav-link" onclick="showLevelTest()">Test de Nivel</button>
-                <button class="nav-link" onclick="showProgress()">Mi Progreso</button>
-                <button class="nav-link" onclick="showSettings()">⚙️</button>
-            </div>
-            <div class="nav-stats">
-                <span class="nav-points">⭐ <span id="navPoints">0</span></span>
-                <span class="nav-streak">🔥 <span id="navStreak">0</span></span>
-            </div>
-        </nav>
-
-        <!-- ===== PANTALLA DE INICIO ===== -->
-        <div id="homeScreen" class="screen active">
-            <div class="home-hero">
-                <div class="hero-content">
-                    <h1 class="hero-title">🌍 English Learning Hub</h1>
-                    <p class="hero-subtitle">Domina el inglés desde cero hasta experto. <br>Gramática, vocabulario, listening, reading y más.</p>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary btn-lg" onclick="showLevelTest()">
-                            🎯 Hacer Test de Nivel
-                        </button>
-                        <button class="btn btn-secondary btn-lg" onclick="scrollToContent()">
-                            📚 Explorar Contenido
-                        </button>
-                    </div>
-                </div>
-                <div class="hero-stats-bar">
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">6</span>
-                        <span class="hero-stat-label">Niveles</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">7</span>
-                        <span class="hero-stat-label">Secciones</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">500+</span>
-                        <span class="hero-stat-label">Ejercicios</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">100%</span>
-                        <span class="hero-stat-label">Gratis</span>
-                    </div>
+        <div class="user-stats">
+            <div class="stat-item">
+                <span class="stat-icon">⭐</span>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalPoints">0</span>
+                    <span class="stat-label">Puntos</span>
                 </div>
             </div>
-
-            <div class="home-container" id="homeContent">
-                <!-- Stats Usuario -->
-                <div class="user-stats-panel">
-                    <div class="stat-card">
-                        <div class="stat-card-icon">⭐</div>
-                        <div class="stat-card-info">
-                            <p class="stat-card-label">Puntos Totales</p>
-                            <p id="totalPoints" class="stat-card-value">0</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-card-icon">🔥</div>
-                        <div class="stat-card-info">
-                            <p class="stat-card-label">Racha Actual</p>
-                            <p id="streakCount" class="stat-card-value">0</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-card-icon">📖</div>
-                        <div class="stat-card-info">
-                            <p class="stat-card-label">Lecciones</p>
-                            <p id="lessonsCompleted" class="stat-card-value">0/60</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-card-icon">🏆</div>
-                        <div class="stat-card-info">
-                            <p class="stat-card-label">Logros</p>
-                            <p id="achievementsCount" class="stat-card-value">0</p>
-                        </div>
-                    </div>
+            <div class="stat-item">
+                <span class="stat-icon">🔥</span>
+                <div class="stat-info">
+                    <span class="stat-value" id="streakCount">0</span>
+                    <span class="stat-label">Racha</span>
                 </div>
-
-                <!-- Secciones Principales -->
-                <div class="sections-grid">
-                    <div class="section-card grammar" onclick="goToSectionList('grammar')">
-                        <div class="section-card-bg">⚙️</div>
-                        <div class="section-card-content">
-                            <h3>Grammar</h3>
-                            <p>Gramática completa desde A1 hasta C1. Explicaciones claras con ejercicios interactivos.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card vocabulary" onclick="goToSectionList('vocabulary')">
-                        <div class="section-card-bg">📖</div>
-                        <div class="section-card-content">
-                            <h3>Vocabulary</h3>
-                            <p>Vocabulario temático por niveles. Palabras clave, definiciones y quizzes con feedback.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card listening" onclick="goToSectionList('listening')">
-                        <div class="section-card-bg">🎧</div>
-                        <div class="section-card-content">
-                            <h3>Listening</h3>
-                            <p>Practica comprensión auditiva con textos narrativos y preguntas de comprensión.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card reading" onclick="goToSectionList('reading')">
-                        <div class="section-card-bg">📄</div>
-                        <div class="section-card-content">
-                            <h3>Reading</h3>
-                            <p>Textos variados con preguntas de comprensión. Mejora tu velocidad de lectura.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card useofenglish" onclick="goToSectionList('useofenglish')">
-                        <div class="section-card-bg">✅</div>
-                        <div class="section-card-content">
-                            <h3>Use of English</h3>
-                            <p>Ejercicios de gramática mixta por nivel. 15 preguntas tipo examen con feedback.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section-card writing" onclick="goToSectionList('writing')">
-                        <div class="section-card-bg">✍️</div>
-                        <div class="section-card-content">
-                            <h3>Writing</h3>
-                            <p>Aprende a escribir emails, ensayos, cartas y más. Guías paso a paso por nivel.</p>
-                            <div class="section-card-levels">
-                                <span class="level-tag">A1</span>
-                                <span class="level-tag">A2</span>
-                                <span class="level-tag">B1</span>
-                                <span class="level-tag">B2</span>
-                                <span class="level-tag">C1</span>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">📖</span>
+                <div class="stat-info">
+                    <span class="stat-value" id="lessonsCompleted">0/60</span>
+                    <span class="stat-label">Lecciones</span>
                 </div>
-
-                <!-- Botones de Acción -->
-                <div class="home-actions">
-                    <button class="btn btn-primary btn-lg" onclick="startFinalExam()">
-                        🎓 Examen Final
-                    </button>
-                    <button class="btn btn-secondary btn-lg" onclick="startQuickReview()">
-                        📋 Repaso Rápido
-                    </button>
-                    <button class="btn btn-accent btn-lg" onclick="showLevelTest()">
-                        🎯 Test de Nivel
-                    </button>
-                </div>
-
-                <!-- Barra de Progreso por Nivel -->
-                <div class="progress-section">
-                    <h3>📊 Tu Progreso por Nivel</h3>
-                    <div class="progress-bars">
-                        <div class="progress-item">
-                            <span class="progress-label">A1 - Principiante</span>
-                            <div class="progress-bar"><div id="progressA1" class="progress-fill" style="width:0%"></div></div>
-                            <span id="progressA1Text" class="progress-text">0%</span>
-                        </div>
-                        <div class="progress-item">
-                            <span class="progress-label">A2 - Básico</span>
-                            <div class="progress-bar"><div id="progressA2" class="progress-fill" style="width:0%"></div></div>
-                            <span id="progressA2Text" class="progress-text">0%</span>
-                        </div>
-                        <div class="progress-item">
-                            <span class="progress-label">B1 - Intermedio</span>
-                            <div class="progress-bar"><div id="progressB1" class="progress-fill" style="width:0%"></div></div>
-                            <span id="progressB1Text" class="progress-text">0%</span>
-                        </div>
-                        <div class="progress-item">
-                            <span class="progress-label">B2 - Intermedio Alto</span>
-                            <div class="progress-bar"><div id="progressB2" class="progress-fill" style="width:0%"></div></div>
-                            <span id="progressB2Text" class="progress-text">0%</span>
-                        </div>
-                        <div class="progress-item">
-                            <span class="progress-label">C1 - Avanzado</span>
-                            <div class="progress-bar"><div id="progressC1" class="progress-fill" style="width:0%"></div></div>
-                            <span id="progressC1Text" class="progress-text">0%</span>
-                        </div>
-                    </div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🏆</span>
+                <div class="stat-info">
+                    <span class="stat-value" id="achievementsCount">0</span>
+                    <span class="stat-label">Logros</span>
                 </div>
             </div>
         </div>
 
-        <!-- ===== PANTALLA DE LISTA DE SECCIONES ===== -->
-        <div id="sectionListScreen" class="screen">
-            <div class="section-list-container">
-                <button class="btn-back" onclick="goToHome()">← Volver al Inicio</button>
-                <div class="section-list-header">
-                    <h2 id="sectionListTitle">Sección</h2>
-                    <p id="sectionListDesc">Descripción</p>
-                </div>
-                <div id="sectionLevelsGrid" class="levels-grid"></div>
-            </div>
+        <div class="nav-sections">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Inicio</span>
+            </a>
+            <a href="#grammar" class="nav-item" data-section="grammar">
+                <span class="nav-icon">📐</span>
+                <span class="nav-text">Grammar</span>
+            </a>
+            <a href="#vocabulary" class="nav-item" data-section="vocabulary">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">Vocabulary</span>
+            </a>
+            <a href="#listening" class="nav-item" data-section="listening">
+                <span class="nav-icon">🎧</span>
+                <span class="nav-text">Listening</span>
+            </a>
+            <a href="#reading" class="nav-item" data-section="reading">
+                <span class="nav-icon">📄</span>
+                <span class="nav-text">Reading</span>
+            </a>
+            <a href="#use-of-english" class="nav-item" data-section="use-of-english">
+                <span class="nav-icon">✅</span>
+                <span class="nav-text">Use of English</span>
+            </a>
+            <a href="#writing" class="nav-item" data-section="writing">
+                <span class="nav-icon">✍️</span>
+                <span class="nav-text">Writing</span>
+            </a>
+            <a href="#games" class="nav-item" data-section="games">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-text">Mini Juegos</span>
+            </a>
+            <a href="#level-test" class="nav-item" data-section="level-test">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Test de Nivel</span>
+            </a>
         </div>
 
-        <!-- ===== PANTALLA DE LISTA DE LECCIONES ===== -->
-        <div id="lessonsListScreen" class="screen">
-            <div class="lessons-list-container">
-                <button class="btn-back" onclick="goBackToSectionList()">← Volver</button>
-                <div class="lessons-list-header">
-                    <span id="lessonsListLevel" class="level-badge-large">A1</span>
-                    <h2 id="lessonsListTitle">Lecciones</h2>
-                    <p id="lessonsListDesc">Selecciona una lección para comenzar</p>
-                </div>
-                <div id="lessonsListGrid" class="lessons-grid"></div>
-            </div>
+        <div class="sidebar-footer">
+            <button class="settings-btn" id="settingsBtn">⚙️ Ajustes</button>
         </div>
+    </nav>
 
-        <!-- ===== PANTALLA DE LECCIÓN ===== -->
-        <div id="lessonScreen" class="screen">
-            <div class="lesson-container">
-                <div class="lesson-header">
-                    <button class="btn-back" id="backFromLesson">← Atrás</button>
-                    <div class="lesson-title-section">
-                        <span id="lessonLevelBadge" class="level-badge">A1</span>
-                        <h2 id="lessonTitle">Título</h2>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="mobile-logo">
+            <span>🌍</span>
+            <span>English Hub</span>
+        </div>
+        <div class="mobile-points">
+            <span>⭐</span>
+            <span id="mobilePoints">0</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- DASHBOARD -->
+        <section class="section active" id="dashboard">
+            <div class="section-header">
+                <h1>👋 ¡Bienvenido a English Hub!</h1>
+                <p>Domina el inglés desde cero hasta experto. Gramática, vocabulario, listening, reading y más.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-icon">📊</div>
+                    <div class="stat-card-value">6</div>
+                    <div class="stat-card-label">Niveles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">📁</div>
+                    <div class="stat-card-value">7</div>
+                    <div class="stat-card-label">Secciones</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">📝</div>
+                    <div class="stat-card-value">500+</div>
+                    <div class="stat-card-label">Ejercicios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon">💎</div>
+                    <div class="stat-card-value">100%</div>
+                    <div class="stat-card-label">Gratis</div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>📊 Tu Progreso por Nivel</h2>
+                <div class="progress-levels">
+                    <div class="level-progress" data-level="A1">
+                        <div class="level-info">
+                            <span class="level-badge">A1</span>
+                            <span class="level-name">Principiante</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-A1"></div>
+                        </div>
+                        <span class="progress-percent" id="percent-A1">0%</span>
                     </div>
-                    <div class="lesson-meta">
-                        <span id="lessonPoints" class="points-display">0 pts</span>
+                    <div class="level-progress" data-level="A2">
+                        <div class="level-info">
+                            <span class="level-badge">A2</span>
+                            <span class="level-name">Básico</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-A2"></div>
+                        </div>
+                        <span class="progress-percent" id="percent-A2">0%</span>
                     </div>
-                </div>
-
-                <!-- Tabs de navegación de sección -->
-                <div class="lesson-tabs">
-                    <button class="lesson-tab active" data-section="explanation" onclick="goToSection('explanation')">
-                        📚 Explicación
-                    </button>
-                    <button class="lesson-tab" data-section="examples" onclick="goToSection('examples')">
-                        💡 Ejemplos
-                    </button>
-                    <button class="lesson-tab" data-section="practice" onclick="goToSection('practice')">
-                        🎮 Práctica
-                    </button>
-                    <button class="lesson-tab" data-section="review" onclick="goToSection('review')">
-                        📝 Repaso
-                    </button>
-                    <button class="lesson-tab" data-section="exam" onclick="goToSection('exam')">
-                        🎓 Examen
-                    </button>
-                </div>
-
-                <div class="lesson-content">
-                    <section id="explanationSection" class="lesson-section active">
-                        <div id="explanationContent" class="content-box"></div>
-                        <button class="btn btn-primary" onclick="goToSection('examples')">
-                            Siguiente: Ejemplos →
-                        </button>
-                    </section>
-
-                    <section id="examplesSection" class="lesson-section">
-                        <div id="examplesContent" class="content-box"></div>
-                        <div class="section-nav">
-                            <button class="btn btn-secondary" onclick="goToSection('explanation')">← Atrás</button>
-                            <button class="btn btn-primary" onclick="goToSection('practice')">Siguiente: Práctica →</button>
+                    <div class="level-progress" data-level="B1">
+                        <div class="level-info">
+                            <span class="level-badge">B1</span>
+                            <span class="level-name">Intermedio</span>
                         </div>
-                    </section>
-
-                    <section id="practiceSection" class="lesson-section">
-                        <div id="practiceContent" class="content-box"></div>
-                        <div class="section-nav">
-                            <button class="btn btn-secondary" onclick="goToSection('examples')">← Atrás</button>
-                            <button class="btn btn-primary" onclick="goToSection('review')">Siguiente: Repaso →</button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-B1"></div>
                         </div>
-                    </section>
-
-                    <section id="reviewSection" class="lesson-section">
-                        <div id="reviewContent" class="content-box"></div>
-                        <div class="section-nav">
-                            <button class="btn btn-secondary" onclick="goToSection('practice')">← Atrás</button>
-                            <button class="btn btn-success" onclick="goToSection('exam')">Siguiente: Examen →</button>
+                        <span class="progress-percent" id="percent-B1">0%</span>
+                    </div>
+                    <div class="level-progress" data-level="B2">
+                        <div class="level-info">
+                            <span class="level-badge">B2</span>
+                            <span class="level-name">Intermedio Alto</span>
                         </div>
-                    </section>
-
-                    <section id="examSection" class="lesson-section">
-                        <div id="examContent" class="content-box"></div>
-                    </section>
-
-                    <section id="resultsSection" class="lesson-section">
-                        <div class="results-container">
-                            <div id="resultsContent" class="content-box"></div>
-                            <div class="section-nav">
-                                <button class="btn btn-secondary" onclick="returnToHome()">← Volver al Inicio</button>
-                                <button class="btn btn-primary" onclick="retryLesson()">🔄 Repetir Lección</button>
-                                <button class="btn btn-success" onclick="nextLesson()">Siguiente Lección →</button>
-                            </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-B2"></div>
                         </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== PANTALLA DE TEST DE NIVEL ===== -->
-        <div id="levelTestScreen" class="screen">
-            <div class="level-test-container">
-                <button class="btn-back" onclick="goToHome()">← Volver al Inicio</button>
-                <div class="level-test-header">
-                    <h2>🎯 Test de Nivel</h2>
-                    <p>60 preguntas para determinar tu nivel de inglés. No hay límite de tiempo.</p>
-                </div>
-                <div id="levelTestContent" class="level-test-content">
-                    <div class="level-test-intro">
-                        <div class="level-test-info">
-                            <div class="info-item">
-                                <span class="info-icon">⏱️</span>
-                                <span>Sin límite de tiempo</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon">❓</span>
-                                <span>60 preguntas de opción múltiple</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon">📊</span>
-                                <span>Resultado inmediato con tu nivel</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon">💡</span>
-                                <span>Feedback para cada respuesta</span>
-                            </div>
+                        <span class="progress-percent" id="percent-B2">0%</span>
+                    </div>
+                    <div class="level-progress" data-level="C1">
+                        <div class="level-info">
+                            <span class="level-badge">C1</span>
+                            <span class="level-name">Avanzado</span>
                         </div>
-                        <button class="btn btn-primary btn-lg" onclick="startLevelTest()" style="margin-top:2rem">
-                            Comenzar Test de Nivel
-                        </button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-C1"></div>
+                        </div>
+                        <span class="progress-percent" id="percent-C1">0%</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- ===== PANTALLA DE PROGRESO ===== -->
-        <div id="progressScreen" class="screen">
-            <div class="progress-container">
-                <button class="btn-back" onclick="goToHome()">← Volver al Inicio</button>
-                <h2>📊 Mi Progreso</h2>
-                <div id="progressContent" class="progress-content"></div>
+            <div class="quick-access">
+                <h2>🚀 Acceso Rápido</h2>
+                <div class="quick-cards">
+                    <div class="quick-card" onclick="app.navigate('games')">
+                        <div class="quick-card-icon">🎮</div>
+                        <h3>Mini Juegos</h3>
+                        <p>Practica con flashcards, matching, scramble y más</p>
+                    </div>
+                    <div class="quick-card" onclick="app.navigate('level-test')">
+                        <div class="quick-card-icon">🎯</div>
+                        <h3>Test de Nivel</h3>
+                        <p>Descubre tu nivel actual en 60 preguntas</p>
+                    </div>
+                    <div class="quick-card" onclick="app.navigate('grammar')">
+                        <div class="quick-card-icon">📐</div>
+                        <h3>Grammar</h3>
+                        <p>Gramática completa con ejercicios interactivos</p>
+                    </div>
+                    <div class="quick-card" onclick="app.navigate('vocabulary')">
+                        <div class="quick-card-icon">📚</div>
+                        <h3>Vocabulary</h3>
+                        <p>Vocabulario temático por niveles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRAMMAR SECTION -->
+        <section class="section" id="grammar">
+            <div class="section-header">
+                <h1>📐 Grammar</h1>
+                <p>Gramática completa desde A1 hasta C1. Explicaciones claras con ejercicios interactivos.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="grammarLessons"></div>
+        </section>
+
+        <!-- VOCABULARY SECTION -->
+        <section class="section" id="vocabulary">
+            <div class="section-header">
+                <h1>📚 Vocabulary</h1>
+                <p>Vocabulario temático por niveles. Palabras clave, definiciones y quizzes con feedback.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="vocabularyLessons"></div>
+        </section>
+
+        <!-- LISTENING SECTION -->
+        <section class="section" id="listening">
+            <div class="section-header">
+                <h1>🎧 Listening</h1>
+                <p>Practica comprensión auditiva con textos narrativos y preguntas de comprensión.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="listeningLessons"></div>
+        </section>
+
+        <!-- READING SECTION -->
+        <section class="section" id="reading">
+            <div class="section-header">
+                <h1>📄 Reading</h1>
+                <p>Textos variados con preguntas de comprensión. Mejora tu velocidad de lectura.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="readingLessons"></div>
+        </section>
+
+        <!-- USE OF ENGLISH SECTION -->
+        <section class="section" id="use-of-english">
+            <div class="section-header">
+                <h1>✅ Use of English</h1>
+                <p>Ejercicios de gramática mixta por nivel. 15 preguntas tipo examen con feedback.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="useOfEnglishLessons"></div>
+        </section>
+
+        <!-- WRITING SECTION -->
+        <section class="section" id="writing">
+            <div class="section-header">
+                <h1>✍️ Writing</h1>
+                <p>Aprende a escribir emails, ensayos, cartas y más. Guías paso a paso por nivel.</p>
+            </div>
+            <div class="level-tabs">
+                <button class="level-tab active" data-level="A1">A1</button>
+                <button class="level-tab" data-level="A2">A2</button>
+                <button class="level-tab" data-level="B1">B1</button>
+                <button class="level-tab" data-level="B2">B2</button>
+                <button class="level-tab" data-level="C1">C1</button>
+            </div>
+            <div class="lessons-grid" id="writingLessons"></div>
+        </section>
+
+        <!-- GAMES SECTION -->
+        <section class="section" id="games">
+            <div class="section-header">
+                <h1>🎮 Mini Juegos</h1>
+                <p>Aprende jugando. Flashcards, matching, word scramble y quizzes interactivos.</p>
+            </div>
+            
+            <div class="games-selector">
+                <button class="game-btn active" data-game="flashcards">
+                    <span class="game-btn-icon">🃏</span>
+                    <span>Flashcards</span>
+                </button>
+                <button class="game-btn" data-game="matching">
+                    <span class="game-btn-icon">🧩</span>
+                    <span>Matching</span>
+                </button>
+                <button class="game-btn" data-game="scramble">
+                    <span class="game-btn-icon">🔤</span>
+                    <span>Word Scramble</span>
+                </button>
+                <button class="game-btn" data-game="quiz">
+                    <span class="game-btn-icon">❓</span>
+                    <span>Speed Quiz</span>
+                </button>
+            </div>
+
+            <div class="game-level-selector">
+                <label>Nivel:</label>
+                <select id="gameLevelSelect">
+                    <option value="A1">A1 - Principiante</option>
+                    <option value="A2">A2 - Básico</option>
+                    <option value="B1">B1 - Intermedio</option>
+                    <option value="B2">B2 - Intermedio Alto</option>
+                    <option value="C1">C1 - Avanzado</option>
+                </select>
+            </div>
+
+            <!-- Flashcards Game -->
+            <div class="game-container active" id="flashcardsGame">
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-front">
+                            <span class="flashcard-word" id="flashcardWord"></span>
+                            <span class="flashcard-hint">Toca para ver la traducción</span>
+                        </div>
+                        <div class="flashcard-back">
+                            <span class="flashcard-translation" id="flashcardTranslation"></span>
+                            <span class="flashcard-example" id="flashcardExample"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button class="btn-secondary" id="flashcardPrev">◀ Anterior</button>
+                    <span class="flashcard-counter" id="flashcardCounter">1 / 10</span>
+                    <button class="btn-primary" id="flashcardNext">Siguiente ▶</button>
+                </div>
+                <div class="flashcard-actions">
+                    <button class="btn-known" id="markKnown">✓ La sé</button>
+                    <button class="btn-unknown" id="markUnknown">✗ Repasar</button>
+                </div>
+            </div>
+
+            <!-- Matching Game -->
+            <div class="game-container" id="matchingGame">
+                <div class="matching-info">
+                    <span class="matching-timer" id="matchingTimer">⏱️ 0:00</span>
+                    <span class="matching-moves" id="matchingMoves">Movimientos: 0</span>
+                </div>
+                <div class="matching-grid" id="matchingGrid"></div>
+                <button class="btn-primary" id="restartMatching">🔄 Reiniciar</button>
+            </div>
+
+            <!-- Word Scramble Game -->
+            <div class="game-container" id="scrambleGame">
+                <div class="scramble-display" id="scrambleDisplay"></div>
+                <div class="scramble-hint" id="scrambleHint"></div>
+                <input type="text" class="scramble-input" id="scrambleInput" placeholder="Escribe la palabra correcta...">
+                <div class="scramble-feedback" id="scrambleFeedback"></div>
+                <div class="scramble-controls">
+                    <button class="btn-secondary" id="scrambleHintBtn">💡 Pista</button>
+                    <button class="btn-primary" id="scrambleCheck">✓ Verificar</button>
+                    <button class="btn-secondary" id="scrambleSkip">⏭ Saltar</button>
+                </div>
+                <div class="scramble-score">
+                    <span>Puntuación: <strong id="scrambleScore">0</strong></span>
+                    <span>Racha: <strong id="scrambleStreak">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Speed Quiz Game -->
+            <div class="game-container" id="quizGame">
+                <div class="quiz-header">
+                    <div class="quiz-timer-bar">
+                        <div class="quiz-timer-fill" id="quizTimerFill"></div>
+                    </div>
+                    <span class="quiz-timer-text" id="quizTimerText">15s</span>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-score">
+                    <span>Pregunta <strong id="quizCurrent">1</strong> / <strong id="quizTotal">10</strong></span>
+                    <span>Puntos: <strong id="quizPoints">0</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEVEL TEST SECTION -->
+        <section class="section" id="level-test">
+            <div class="section-header">
+                <h1>🎯 Test de Nivel</h1>
+                <p>60 preguntas para determinar tu nivel de inglés. No hay límite de tiempo.</p>
+            </div>
+            
+            <div class="level-test-intro" id="levelTestIntro">
+                <div class="test-features">
+                    <div class="test-feature">
+                        <span class="test-feature-icon">⏱️</span>
+                        <span>Sin límite de tiempo</span>
+                    </div>
+                    <div class="test-feature">
+                        <span class="test-feature-icon">❓</span>
+                        <span>60 preguntas de opción múltiple</span>
+                    </div>
+                    <div class="test-feature">
+                        <span class="test-feature-icon">📊</span>
+                        <span>Resultado inmediato con tu nivel</span>
+                    </div>
+                    <div class="test-feature">
+                        <span class="test-feature-icon">💡</span>
+                        <span>Feedback para cada respuesta</span>
+                    </div>
+                </div>
+                <button class="btn-primary btn-large" id="startLevelTest">Comenzar Test</button>
+            </div>
+
+            <div class="level-test-quiz" id="levelTestQuiz" style="display:none;">
+                <div class="test-progress-bar">
+                    <div class="test-progress-fill" id="testProgressFill"></div>
+                </div>
+                <div class="test-progress-text" id="testProgressText">Pregunta 1 de 60</div>
+                <div class="test-question-container">
+                    <div class="test-question" id="testQuestion"></div>
+                    <div class="test-options" id="testOptions"></div>
+                </div>
+            </div>
+
+            <div class="level-test-result" id="levelTestResult" style="display:none;">
+                <div class="result-badge" id="resultBadge"></div>
+                <h2 id="resultTitle"></h2>
+                <p id="resultDescription"></p>
+                <div class="result-stats" id="resultStats"></div>
+                <div class="result-recommendations" id="resultRecommendations"></div>
+                <button class="btn-primary" id="retakeTest">🔄 Hacer de nuevo</button>
+            </div>
+        </section>
+
+        <!-- LESSON MODAL -->
+        <div class="modal-overlay" id="lessonModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Lección</h2>
+                    <button class="modal-close" id="modalClose">✕</button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer" id="modalFooter"></div>
             </div>
         </div>
 
-        <!-- ===== PANTALLA DE AJUSTES ===== -->
-        <div id="settingsScreen" class="screen">
-            <div class="settings-container">
-                <button class="btn-back" onclick="goToHome()">← Volver al Inicio</button>
-                <h2>⚙️ Ajustes</h2>
-                <div class="settings-content">
+        <!-- SETTINGS MODAL -->
+        <div class="modal-overlay" id="settingsModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>⚙️ Ajustes</h2>
+                    <button class="modal-close" id="settingsClose">✕</button>
+                </div>
+                <div class="modal-body">
                     <div class="setting-item">
-                        <span>Efectos de sonido</span>
+                        <label>Efectos de sonido</label>
                         <label class="toggle">
-                            <input type="checkbox" id="soundToggle" checked onchange="toggleSetting('sound')">
+                            <input type="checkbox" id="soundToggle" checked>
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
                     <div class="setting-item">
-                        <span>Animaciones</span>
+                        <label>Animaciones</label>
                         <label class="toggle">
-                            <input type="checkbox" id="animToggle" checked onchange="toggleSetting('animations')">
+                            <input type="checkbox" id="animationToggle" checked>
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
                     <div class="setting-item">
-                        <span>Modo oscuro</span>
+                        <label>Modo oscuro</label>
                         <label class="toggle">
-                            <input type="checkbox" id="darkToggle" onchange="toggleSetting('darkMode')">
+                            <input type="checkbox" id="darkModeToggle">
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
                     <div class="setting-item danger">
-                        <span>Borrar todo mi progreso</span>
-                        <button class="btn btn-danger" onclick="resetAllProgress()">Borrar Datos</button>
+                        <button class="btn-danger" id="resetProgress">🗑️ Borrar todo mi progreso</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== MODAL DE FEEDBACK ===== -->
-        <div id="feedbackModal" class="modal hidden">
-            <div class="modal-overlay" onclick="closeFeedback()"></div>
-            <div class="modal-content">
-                <div id="feedbackMessage" class="modal-message"></div>
-                <div class="modal-actions">
-                    <button class="btn btn-primary" onclick="closeFeedback()">Continuar</button>
-                </div>
-            </div>
-        </div>
+        <!-- TOAST NOTIFICATIONS -->
+        <div class="toast-container" id="toastContainer"></div>
 
-        <!-- ===== TOAST CONTAINER ===== -->
-        <div id="toastContainer"></div>
+    </main>
 
-        <!-- ===== CONFETTI CONTAINER ===== -->
-        <div id="confettiContainer"></div>
-    </div>
-
-    <script src="utils.js"></script>
-    <script src="themes.js"></script>
+    <script src="script.js"></script>
+    <!--  <script src="app.js"></script>
+     <script src="themes.js"></script>
     <script src="quiz.js"></script>
-    <script src="app.js"></script>
+    <script src="utils.js"></script> -->
 </body>
 </html>
-'''
-
-with open(f"{output_dir}/index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("✅ index.html creado")

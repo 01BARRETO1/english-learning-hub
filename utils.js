@@ -1,17 +1,3 @@
-import os
-base_path = '/mnt/agents/output/english-learning-hub'
-
-# ============================================================
-# 3. UTILS.JS - Funciones auxiliares
-# ============================================================
-utils_js = '''/* ============================================================
-   UTILS.JS - Funciones auxiliares reutilizables
-   ============================================================
-   - Guardar/cargar progreso en localStorage
-   - Notificaciones toast
-   - Temporizador
-   - Utilidades de strings/arrays
-   ============================================================ */
 
 const STORAGE_KEY = 'englishHubProgress';
 
@@ -235,9 +221,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-'''
 
-with open(f'{base_path}/utils.js', 'w', encoding='utf-8') as f:
-    f.write(utils_js)
-
-print(f"✅ utils.js creado ({os.path.getsize(f'{base_path}/utils.js'):,} bytes)")
